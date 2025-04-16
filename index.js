@@ -23,4 +23,40 @@ console.log("22:", "3" > 2)//The > operator forces the string "3" to be converte
 console.log("23:", "2" < "12")//since both are string. it is compared lexicogrpahlly and It first compares the "2" in "2" with the "1" in "12". Since "1" is less than "2", it actually considers "12" as greater than "2". result is false because "2" is not less than "12"
 console.log("24:", null == undefined) // null == undefined is a special case in JavaScript. When using the loose equality operator (==), null and undefined are only equal to each other, and not to anything else.
 console.log("25:", null + 1)//null gets coerced to 0 in numeric operations.
+console.log("26", undefined + 1); //undefined gets coerced to NaN (Not a Number) in arithmetic operations.
+console.log("27:", [] == false);// [] is first converted to a primitive using .toString(), which gives an empty string "".Then "" is coerced to 0 when compared with false.
+console.log("28:", !!null);// null is a false value. ! will become truth and another ! will become false
+console.log("29:", !![]); // [] is truthy value in JS and doube negation makes it true again.
+console.log("30:", [] == ![]); // truthy value [] is not equal to negation of ![]
+console.log("31:", {} + []);//({})+[] and then +[] becomes 0 and {} becomes [object object] and +[] is a blank string
+console.log("32:", [] == 0)//[] is coerced to "", which is then coerced to 0, so 0 == 0 results in true.
+console.log("33:", 1 + '1' - 1); //1 + '1' results in "11", and "11" - 1 coerces the string to a number, so 11 - 1 equals 10.
+console.log("34:", typeof null)//typeof null returns "object" due to a historical bug in JavaScript's implementation.
+console.log("35:", [] == false)// [] == false is true because [] is coerced to "" (empty string), and "" is coerced to 0, making 0 == 0
+console.log("36:", {} == {});//{} create new object references, and in JavaScript, objects are only equal if they reference the exact same memory.
+console.log("37:", [1, 2, 3] == "1,2,3");//Array gets coerced to string via .toString(), so [1,2,3] == "1,2,3" → "1,2,3" == "1,2,3" → true
+console.log("38:", parseInt("10abc")); //parseInt("10abc") returns 10 because parseInt parses from the start until it hits a non-digit character.
+console.log("39:", parseInt("abc10")); //parseInt("abc10") returns NaN because it can't find a valid number at the start of the string.
+console.log("40:", 0 || "default");//0 is falsy, so || returns the second value: "default".
+console.log("41:", "value" && 0); //Because with &&, JavaScript returns the first falsy value it encounters — "value" is truthy, so it moves to 0, which is falsy, and returns 0.
+console.log("42:", Boolean([]));//[] is truthy, so Boolean([]) returns true.
+console.log("43:", Boolean({}));//{} is a non-null object, which is always truthy in JavaScript, so Boolean({}) returns true.
+console.log("44:", !!0);//Yup, !!0 is false — because 0 is falsy, and double negation (!!) converts it to boolean.
+console.log("45:", 1 + "2" - "3")//1 + "2" results in "12", then "12" - "3" coerces the string to a number and subtracts, giving 9.
+console.log("46:", 1 == [1]); //1 == [1] is true because [1] is coerced to "1", and "1" == 1 is true due to type conversion.
+console.log("47:", NaN == NaN)//Correct! NaN == NaN is false because NaN is not equal to any value, including itself.
+console.log("48:", isNaN(NaN));//NaN is not a number
+
+
+
+
+
+
+
+
+
+
+
+
+
 
