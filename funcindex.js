@@ -137,6 +137,157 @@ const mapProducts = [
 ]
 
 const discountedPrice = mapProducts.map(product => ({ name: product.name, original: product.price, discounted: product.price - (product.price * 0.2) }));
-console.log(discountedPrice);
+console.log("map each element to give discounted price:", discountedPrice);
 
 console.log("----************************************************************--------");
+
+// For Each
+
+const foreachUsers = [
+    { name: "Shafee", age: 32, online: true },
+    { name: "Azeem", age: 29, online: false },
+    { name: "Arkam", age: 24, online: true },
+    { name: "Anju", age: 37, online: false },
+    { name: "farah", age: 24, online: true },
+    { name: "Ghani", age: 24, online: true }
+]
+
+console.log("For EACH")
+foreachUsers.forEach(user => console.log(`user detail: \n${user.name} is ${user.age} years old`));
+
+let olderUsers = [];
+foreachUsers.forEach(user => {
+    if (user.age > 31) {
+        olderUsers.push(user);
+    }
+}
+)
+
+console.log(olderUsers);
+
+let totalAge = 0;
+foreachUsers.forEach(
+    user => {
+        totalAge += user.age;
+    }
+)
+
+console.log(`total age of all users:${totalAge}`);
+
+let totalUserOver30 = 0;
+
+foreachUsers.forEach(
+    user => {
+        if (user.age > 25) {
+            totalUserOver30++;
+        }
+    }
+)
+
+console.log(`Users Over 25:${totalUserOver30}`);
+
+let allUsersOnline = [];
+foreachUsers.forEach(
+    user => {
+        if (user.online) {
+            allUsersOnline.push(user.name);
+        }
+    }
+)
+
+const arrresult = ` ${allUsersOnline.join(",")}`;
+console.log(`Total users Online:${arrresult}`);
+
+// total users online and offline
+
+let onlineCount = 0;
+let offlineCount = 0;
+
+foreachUsers.forEach(
+    user => {
+        if (user.online) {
+            onlineCount++;
+        } else {
+            offlineCount++;
+        }
+    }
+)
+
+console.log(`online:${onlineCount}`)
+console.log(`offline:${offlineCount}`)
+
+
+// .reduce() method
+const reduceUsers = [
+    { name: "shafee", age: 32 },
+    { name: "arkam", age: 24 },
+    { name: "anjum", age: 38 },
+    { name: "binthu", age: 36 },
+]
+
+const reduceTotalAge = reduceUsers.reduce((total, user) => {
+    return total + user.age
+}, 0);
+
+console.log(reduceTotalAge);
+
+// calculate the total price of all products
+
+const reduceTotalPrice = mapProducts.reduce((total, product) => {
+    return total + product.price;
+}, 0)
+
+console.log(reduceTotalPrice);
+
+
+//calculate the discounted price
+const reduceProducts = [
+    { name: "laptop", price: 700 },
+    { name: "Smart Phone", price: 1500 },
+    { name: "Tablet", price: 850 },
+    { name: "macbook", price: 3300 },
+    { name: "PC", price: 1700 },
+    { name: "harddrive", price: 200 }
+]
+
+const reducediscountedPrice = reduceProducts.map(
+    product => ({ name: product.name, original_price: product.price, discount: product.price - (product.price * 0.1) }))
+
+
+console.log(reducediscountedPrice);
+
+const totalDiscount = reducediscountedPrice.reduce((total, product) => {
+    return total + product.discount;
+}, 0)
+
+console.log(totalDiscount);
+
+// sum of all the discount price. 
+
+const expensive_products = reduceProducts
+    .filter(product => product.price > 1000)
+    .reduce((totalDiscount, product) => {
+        return totalDiscount + product.price * 0.1;
+    }, 0);
+
+console.log(expensive_products)
+
+// total discount on selected products
+
+const megaProducts = [
+    { name: "laptop", category: "tech", price: 1500 },
+    { name: "smartphone", category: "tech", price: 1200 },
+    { name: "Tablet", category: "tech", price: 900 },
+    { name: "chair", category: "furniture", price: 200 },
+    { name: "Desk", category: "furniture", price: 450 },
+    { name: "Monitor", category: "tech", price: 600 },
+    { name: "Couch", category: "furniture", price: 1200 }
+]
+
+const totalDiscountTechProducts = megaProducts.filter(product => product.category === "tech")
+    .map(product => ({ ...product, discount: product.price * 0.15 }))
+    .reduce((totalDiscount, product) => {
+        return totalDiscount + product.discount;
+    })
+
+console.log(totalDiscountTechProducts)
