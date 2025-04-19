@@ -281,13 +281,28 @@ const megaProducts = [
     { name: "chair", category: "furniture", price: 200 },
     { name: "Desk", category: "furniture", price: 450 },
     { name: "Monitor", category: "tech", price: 600 },
-    { name: "Couch", category: "furniture", price: 1200 }
+    { name: "Couch", category: "furniture", price: 1200 },
+    { name: "HalfLife2", category: "Games", price: 50 },
 ]
 
 const totalDiscountTechProducts = megaProducts.filter(product => product.category === "tech")
     .map(product => ({ ...product, discount: product.price * 0.15 }))
-    .reduce((totalDiscount, product) => {
-        return totalDiscount + product.discount;
-    })
+    .reduce((totalDiscount, product) => { return totalDiscount + product.discount; }, 0)
 
-console.log(totalDiscountTechProducts)
+console.log(totalDiscountTechProducts);
+
+// products by category 
+
+const productsByCategory = megaProducts.reduce(
+    (acc, product) => {
+        const category = product.category;
+
+        if (!acc[category]) {
+            acc[category] = [];
+        }
+        acc[category].push(product);
+        return acc;
+    }
+    , {});
+
+console.log(productsByCategory)
