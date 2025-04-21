@@ -305,4 +305,391 @@ const productsByCategory = megaProducts.reduce(
     }
     , {});
 
-console.log(productsByCategory)
+console.log(productsByCategory);
+
+
+const productsCategory = megaProducts.reduce(
+    (acc, product) => {
+        const prodCategory = product.category;
+
+        if (!acc[prodCategory]) {
+            acc[prodCategory] = [];
+        }
+        acc[prodCategory].push(product);
+        return acc;
+    }
+    , {})
+
+console.log(productsCategory)
+
+// interview question
+
+const age = 10;
+var person = {
+    name: "shafee",
+    age: 20,
+    getAge: function () {
+        return this.age;
+    },
+};
+
+var person2 = { age: 24 };
+person.getAge.call(person2);
+
+console.log(person.getAge.call(person2))
+
+// again
+
+const prodCat = megaProducts.reduce(
+    (acc, prod) => {
+        const producat = prod.category;
+
+        if (!acc[producat]) {
+            acc[producat] = [];
+        }
+
+        acc[producat].push(prod);
+        return acc;
+    }
+)
+
+console.log(prodCat);
+
+// group again using reduce
+
+const summary = megaProducts.reduce(
+    (acc, products) => {
+        const category = products.category;
+
+        if (!acc[category]) {
+            acc[category] = {
+                totalPrice: 0,
+                products: []
+            };
+        }
+
+        acc[category].totalPrice += products.price;
+        acc[category].products.push(products.name);
+        return acc;
+
+    }, {}
+)
+
+console.log(summary);
+
+
+// grouping using reduce
+
+const studentGrades = [
+    { name: "Alice", subject: "Math", grade: 85 },
+    { name: "Bob", subject: "Math", grade: 92 },
+    { name: "Charlie", subject: "Science", grade: 78 },
+    { name: "Dave", subject: "Math", grade: 88 },
+    { name: "Eve", subject: "Science", grade: 94 },
+    { name: "Frank", subject: "History", grade: 85 },
+    { name: "Grace", subject: "History", grade: 90 },
+];
+const studentSummary = studentGrades.reduce(
+    (acc, students) => {
+        const subject = students.subject
+        if (!acc[subject]) {
+            acc[subject] = {
+                total: 0,
+                count: 0,
+                students: []
+
+            };
+        }
+
+        acc[subject].total += students.grade;
+        acc[subject].count += 1;
+        acc[subject].students.push(students.name);
+
+        return acc;
+    }
+    , {})
+
+console.log(studentSummary);
+
+/// reduce book inventory
+
+const bookInventory = [
+    { title: "The Hobbit", author: "J.R.R. Tolkien", genre: "Fantasy", price: 15.99 },
+    { title: "1984", author: "George Orwell", genre: "Dystopian", price: 12.5 },
+    { title: "The Silmarillion", author: "J.R.R. Tolkien", genre: "Fantasy", price: 18.75 },
+    { title: "Brave New World", author: "Aldous Huxley", genre: "Dystopian", price: 10.0 },
+    { title: "The Name of the Wind", author: "Patrick Rothfuss", genre: "Fantasy", price: 14.99 },
+    { title: "Sapiens", author: "Yuval Noah Harari", genre: "Non-Fiction", price: 22.0 },
+    { title: "Educated", author: "Tara Westover", genre: "Non-Fiction", price: 19.0 },
+];
+
+const bookSummary = bookInventory.reduce(
+    (acc, books) => {
+        const genre = books.genre;
+
+        if (!acc[genre]) {
+            acc[genre] = {
+                totalPrice: 0,
+                titles: []
+            }
+        }
+
+        acc[genre].totalPrice += books.price;
+        acc[genre].titles.push(books.title);
+
+        return acc;
+    }
+    , {})
+
+console.log(bookSummary)
+
+// manage Gym attendance
+
+const gymMembers = [
+    { name: "Alex", membership: "Gold", sessionsAttended: 12 },
+    { name: "Beth", membership: "Silver", sessionsAttended: 8 },
+    { name: "Charlie", membership: "Gold", sessionsAttended: 15 },
+    { name: "Dana", membership: "Bronze", sessionsAttended: 5 },
+    { name: "Eli", membership: "Silver", sessionsAttended: 10 },
+    { name: "Fay", membership: "Gold", sessionsAttended: 7 },
+    { name: "Gabe", membership: "Bronze", sessionsAttended: 9 }
+];
+
+const membershipSummary = gymMembers.reduce(
+    (acc, members) => {
+        const membership = members.membership;
+
+        if (!acc[membership]) {
+            acc[membership] = {
+                totalSessions: 0,
+                members: []
+            }
+
+
+        }
+        acc[membership].totalSessions += members.sessionsAttended;
+        acc[membership].members.push(members.name)
+        return acc;
+
+    }
+    , {})
+
+console.log(membershipSummary);
+
+// group company employees
+const employees = [
+    { name: "Alice", department: "Engineering", team: "Frontend", salary: 90000 },
+    { name: "Bob", department: "Engineering", team: "Backend", salary: 95000 },
+    { name: "Charlie", department: "Engineering", team: "Frontend", salary: 87000 },
+    { name: "Dana", department: "Design", team: "UX", salary: 80000 },
+    { name: "Eli", department: "Design", team: "UI", salary: 85000 },
+    { name: "Fay", department: "Engineering", team: "Backend", salary: 99000 },
+    { name: "Gabe", department: "HR", team: "Recruiting", salary: 70000 }
+];
+
+const employeeSummary = employees.reduce(
+    (acc, employee) => {
+        const department = employee.department;
+        const team = employee.team;
+
+        if (!acc[department]) {
+            acc[department] = {
+                totalSalary: 0,
+                teams: {}
+            }
+        }
+        acc[department].totalSalary += employee.salary;
+        if (!acc[department].teams[team]) {
+            acc[department].teams[team] = [];
+        }
+
+        acc[department].teams[team].push(employee.name);
+        return acc;
+
+    }
+
+
+    , {})
+
+console.log(employeeSummary)
+
+// team summary
+
+const players = [
+    { name: "Alice", team: "Red", score: 12 },
+    { name: "Bob", team: "Blue", score: 17 },
+    { name: "Charlie", team: "Red", score: 22 },
+    { name: "Dana", team: "Blue", score: 19 },
+    { name: "Eli", team: "Green", score: 15 },
+    { name: "Fay", team: "Red", score: 9 },
+    { name: "Gabe", team: "Green", score: 20 }
+];
+
+const playerSummary = players.reduce(
+    (acc, player) => {
+
+        const team = player.team;
+
+        if (!acc[team] || player.score > acc[team].score) {
+            acc[team] = {
+                name: player.name,
+                score: player.score,
+            }
+
+
+        }
+
+
+        return acc;
+
+    }
+    , {})
+
+console.log(playerSummary)
+
+//Group another gruoup
+const Rplayers = [
+    { name: "Alice", team: "Red" },
+    { name: "Bob", team: "Blue" },
+    { name: "Charlie", team: "Red" },
+    { name: "Dana", team: "Blue" },
+    { name: "Eli", team: "Green" },
+    { name: "Fay", team: "Red" },
+    { name: "Gabe", team: "Green" }
+];
+
+const GroupRPlayers = Rplayers.reduce(
+
+
+    (acc, player) => {
+
+        const team = player.team;
+        count = 0;
+        if (!acc[team]) {
+            acc[team] = 0;
+        }
+
+        acc[team] += 1;
+        return acc;
+    }
+    , {})
+
+console.log(GroupRPlayers);
+
+
+//another group exercise
+const salesData = [
+    { name: "Alice", region: "North", sales: 1200 },
+    { name: "Bob", region: "South", sales: 950 },
+    { name: "Charlie", region: "North", sales: 1350 },
+    { name: "Dana", region: "South", sales: 700 },
+    { name: "Eli", region: "East", sales: 1600 },
+    { name: "Fay", region: "East", sales: 900 },
+    { name: "Gabe", region: "North", sales: 400 }
+];
+
+const groupSalesData = salesData.reduce(
+
+    (acc, employee) => {
+        const region = employee.region;
+
+
+        if (employee.sales > 1000) {
+            if (!acc[region]) {
+                acc[region] = 0;
+            }
+
+            acc[region] += employee.sales;
+        }
+
+        return acc;
+    }
+    , {})
+
+console.log(groupSalesData);
+
+// another group
+
+
+
+const RsalesData = [
+    { name: "Alice", region: "North", sales: 1200 },
+    { name: "Bob", region: "South", sales: 950 },
+    { name: "Charlie", region: "North", sales: 1350 },
+    { name: "Dana", region: "South", sales: 700 },
+    { name: "Eli", region: "East", sales: 1600 },
+    { name: "Fay", region: "East", sales: 900 },
+    { name: "Gabe", region: "North", sales: 400 }
+];
+
+const groupRsalesData = RsalesData.reduce(
+    (acc, employee) => {
+        const region = employee.region;
+
+        if (!acc[region]) {
+            acc[region] = 0;
+        }
+
+        if (employee.sales > 1000) {
+            acc[region] += 1;
+        }
+
+        return acc;
+    }
+    , {})
+
+console.log("group sales data:", groupRsalesData);
+
+//group mixed sales
+
+const mixedSales = [
+    { name: "Alice", region: "North", sales: 900 },
+    { name: "Bob", region: "South", sales: 950 },
+    { name: "Alice", region: "East", sales: 800 },
+    { name: "Charlie", region: "North", sales: 1350 },
+    { name: "Bob", region: "North", sales: 300 },
+    { name: "Charlie", region: "South", sales: 700 },
+    { name: "Dana", region: "South", sales: 400 },
+]
+
+const groupMixesSales = mixedSales.reduce(
+    (acc, employee) => {
+        const name = employee.name;
+
+        if (!acc[name]) {
+            acc[name] = 0;
+        }
+        acc[name] += employee.sales;
+
+        return acc;
+    }
+    , {})
+
+console.log("total sales per emplyee:", groupMixesSales);
+
+// another grouping problem
+
+const productSales = [
+    { name: "Laptop", category: "Tech", unitsSold: 10 },
+    { name: "Phone", category: "Tech", unitsSold: 15 },
+    { name: "Desk", category: "Furniture", unitsSold: 5 },
+    { name: "Chair", category: "Furniture", unitsSold: 12 },
+    { name: "Pen", category: "Stationery", unitsSold: 50 },
+    { name: "Notebook", category: "Stationery", unitsSold: 30 }
+];
+
+
+const groupProductSales = productSales.reduce(
+    (acc, product) => {
+        const category = product.category;
+
+        if (!acc[category]) {
+            acc[category] = 0;
+        }
+
+        acc[category] += product.unitsSold;
+        return acc;
+    }
+    , {})
+
+console.log("total units sold:", groupProductSales)
