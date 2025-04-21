@@ -692,4 +692,186 @@ const groupProductSales = productSales.reduce(
     }
     , {})
 
-console.log("total units sold:", groupProductSales)
+console.log("total units sold:", groupProductSales);
+
+//another grouping problem
+
+const reduceSales = [
+    { name: "Alice", region: "North", product: "Laptop", unitsSold: 5 },
+    { name: "Bob", region: "South", product: "Phone", unitsSold: 10 },
+    { name: "Alice", region: "North", product: "Phone", unitsSold: 7 },
+    { name: "Charlie", region: "South", product: "Laptop", unitsSold: 3 },
+    { name: "Dana", region: "East", product: "Phone", unitsSold: 8 },
+    { name: "Alice", region: "North", product: "Laptop", unitsSold: 2 },
+];
+
+const groupRsales = reduceSales.reduce(
+    (acc, salesData) => {
+        const region = salesData.region;
+        const product = salesData.product;
+
+        if (!acc[region]) {
+            acc[region] = {};
+
+        }
+
+        if (!acc[region][product]) {
+            acc[region][product] = 0;
+        }
+
+        acc[region][product] += salesData.unitsSold;
+
+        return acc;
+    }
+    , {})
+
+console.log(groupRsales);
+
+//Inventory
+
+const Rinventory = [
+    { store: "A", category: "Tech", item: "Laptop", quantity: 5 },
+    { store: "A", category: "Tech", item: "Tablet", quantity: 3 },
+    { store: "A", category: "Furniture", item: "Chair", quantity: 10 },
+    { store: "B", category: "Tech", item: "Laptop", quantity: 7 },
+    { store: "B", category: "Furniture", item: "Table", quantity: 2 },
+    { store: "C", category: "Stationery", item: "Pen", quantity: 50 },
+    { store: "C", category: "Stationery", item: "Notebook", quantity: 30 },
+    { store: "C", category: "Tech", item: "Laptop", quantity: 1 },
+];
+
+
+const groupRInventory = Rinventory.reduce(
+    (acc, business) => {
+        const store = business.store;
+        const category = business.category;
+
+        if (!acc[store]) {
+            acc[store] = {};
+        }
+
+        if (!acc[store][category]) {
+            acc[store][category] = 0;
+        }
+
+        acc[store][category] += business.quantity;
+
+        return acc;
+    }
+    , {})
+
+console.log("group business:", groupRInventory)
+
+//just another grouping problem
+
+const reduceSalesData = [
+    { store: "A", product: "Laptop", sales: 500, quantity: 5 },
+    { store: "A", product: "Tablet", sales: 300, quantity: 3 },
+    { store: "A", product: "Chair", sales: 100, quantity: 10 },
+    { store: "B", product: "Laptop", sales: 700, quantity: 7 },
+    { store: "B", product: "Table", sales: 200, quantity: 2 },
+    { store: "C", product: "Pen", sales: 50, quantity: 50 },
+    { store: "C", product: "Notebook", sales: 30, quantity: 30 },
+    { store: "C", product: "Laptop", sales: 1000, quantity: 1 },
+];
+
+const groupReduceSalesData = reduceSalesData.reduce(
+    (acc, business) => {
+        const { store, product, sales, quantity } = business;
+        const totalSales = sales * quantity;
+
+        if (!acc[store]) {
+            acc[store] = [];
+        }
+
+        const existingProduct = acc[store].find(p => p.product === product)
+
+        if (existingProduct) {
+            existingProduct.totalSales += totalSales;
+        } else {
+            acc[store].push({ product, totalSales })
+        }
+
+
+
+        return acc;
+
+
+    }
+
+    , {})
+
+console.log("store grouping: ", groupReduceSalesData)
+
+// one more 
+const reduceStudentGrades = [
+    { name: "Alice", subject: "Math", grade: 85 },
+    { name: "Bob", subject: "Math", grade: 90 },
+    { name: "Alice", subject: "Science", grade: 92 },
+    { name: "Charlie", subject: "Math", grade: 70 },
+    { name: "Bob", subject: "Science", grade: 88 },
+    { name: "Charlie", subject: "Science", grade: 75 },
+];
+
+const groupReduceStudentGrades = reduceStudentGrades.reduce((acc, school) => {
+    const { name, subject, grade } = school;
+
+    if (!acc[name]) {
+        acc[name] = [];
+    }
+
+    acc[name].push({ subject, grade });
+
+    return acc;
+}, {})
+
+console.log("school students scores:", reduceStudentGrades)
+
+// another grouping
+
+const classGrades = [
+    { name: "Alice", subject: "English", grade: 78 },
+    { name: "Bob", subject: "English", grade: 85 },
+    { name: "Alice", subject: "History", grade: 90 },
+    { name: "Charlie", subject: "English", grade: 82 },
+    { name: "Bob", subject: "History", grade: 88 },
+    { name: "Charlie", subject: "History", grade: 91 },
+]
+
+const groupClassGrades = classGrades.reduce((acc, school) => {
+    const { name, subject, grade } = school;
+
+    if (!acc[name]) {
+        acc[name] = [];
+    }
+
+    acc[name].push({ subject: school.subject, grade: school.grade })
+
+    return acc;
+
+}, {})
+console.log(groupClassGrades)
+
+const avgGrade = classGrades.reduce((acc, school) => {
+    const { name, subject, grade } = school;
+
+    if (!acc[subject]) {
+        acc[subject] = {
+            total: 0,
+            count: 0
+        }
+    }
+
+    acc[subject].total += school.grade;
+    acc[subject].count += 1
+    return acc;
+
+
+}, {})
+
+for (let subject in avgGrade) {
+    const { total, count } = avgGrade[subject];
+    avgGrade[subject] = (total / count).toFixed(2)
+}
+
+console.log("avg score", avgGrade)
