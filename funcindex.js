@@ -928,7 +928,7 @@ function outer() {
     function increment() {
         counter++;
         const current = counter;
-        setTimeout(() => { console.log("Count is:", current) }, 1000)
+        console.log("Count is:", current);
     } return increment;
 }
 
@@ -957,3 +957,55 @@ console.log(counter1());
 
 const counter2 = createCounter();
 console.log(counter2());
+
+
+// 
+
+function delayedGreeting(name) {
+    return function () {
+
+        console.log(`Hello, ${name}`)
+
+    };
+}
+
+const greetJohn = delayedGreeting("Shafee");
+
+greetJohn();
+
+/// Rate limiter. 
+
+function clickManager() {
+    let clickCounter = 0;
+    const limit = 5;
+
+    function click() {
+
+        if (clickCounter >= limit) {
+            console.log("You have reached the limit")
+        } else {
+            clickCounter++;
+            console.log(`click number:${clickCounter}, you have ${5 - clickCounter} remaining`)
+        }
+
+    }
+
+    function reset() {
+        clickCounter = 0;
+        console.log("the click counter has been reset")
+    }
+
+    return { click, reset }
+}
+
+
+const clickDo = clickManager();
+
+clickDo.click();
+clickDo.click();
+clickDo.click();
+clickDo.click();
+clickDo.click();
+clickDo.click();
+clickDo.reset();
+clickDo.click();
