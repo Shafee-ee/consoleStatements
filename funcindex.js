@@ -873,5 +873,87 @@ for (let subject in avgGrade) {
     const { total, count } = avgGrade[subject];
     avgGrade[subject] = (total / count).toFixed(2)
 }
-
 console.log("avg score", avgGrade)
+
+//
+const examScores = [
+    { name: "Alice", subject: "Math", score: 88 },
+    { name: "Bob", subject: "Math", score: 92 },
+    { name: "Charlie", subject: "Math", score: 85 },
+    { name: "Alice", subject: "Science", score: 91 },
+    { name: "Bob", subject: "Science", score: 89 },
+    { name: "Charlie", subject: "Science", score: 95 },
+];
+
+const reduceExamScores = examScores.reduce((acc, school) => {
+    const { name, subject, score } = school;
+
+    if (!acc[subject]) {
+        acc[subject] = {
+            name: "",
+            score: 0,
+            subject: "",
+        }
+    }
+    if (score > acc[subject].score) { acc[subject].name = name; acc[subject].score = score; acc[subject].subject = subject }
+
+    return acc;
+
+}, {})
+
+console.log(reduceExamScores)
+
+// closures
+
+//examples
+
+function outerFunction() {
+    let outervariable = "I am outside";
+
+    function innerFunction() {
+        console.log(outervariable);
+    }
+
+    return innerFunction;
+}
+
+const closureExample = outerFunction();
+closureExample();
+
+// the inner function remembers variables from the outer function -even after the outer function has finsihed running
+
+function outer() {
+    let counter = 0;
+
+    function increment() {
+        counter++;
+        const current = counter;
+        setTimeout(() => { console.log("Count is:", current) }, 1000)
+    } return increment;
+}
+
+const countUp = outer();
+countUp();
+countUp();
+countUp();
+countUp();
+
+//
+
+// closure mantains state accross calls
+
+function createCounter() {
+    let count = 0;
+
+    return function () {
+        count++;
+        return count;
+    };
+}
+
+const counter1 = createCounter();
+console.log(counter1());
+console.log(counter1());
+
+const counter2 = createCounter();
+console.log(counter2());
