@@ -3,13 +3,55 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: ''
+  });
 
-  const [isVisible, setIsVisible] = useState(false)
+  const [submittedData, setSubmittedData] = useState(null);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: '', email: '' });
+  }
+
   return (
-    <div> <h1> REACT IS ON</h1>
-      <p>Current Count:{count}</p>
+    <div>
 
-      <button onClick={() => setCount(count + 9999)}>increment</button>
+      <form onSubmit={handleSubmit}>
+        <input name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder='Enter your Name'
+        />
+
+        <input name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder='Enter your email'
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+      {submittedData && (
+        <div>
+          <h3>submitted Data</h3>
+          <p>Name:{submittedData.name}</p>
+          <p>Email:{submittedData.email}</p>
+        </div>
+      )
+
+      }
+
     </div>
   );
 }

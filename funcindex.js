@@ -1009,3 +1009,19 @@ clickDo.click();
 clickDo.click();
 clickDo.reset();
 clickDo.click();
+
+
+// interview question 
+
+const animals = [
+    { species: "Feline", name: "Lion" },
+    { species: "Avian", name: "pea cock" }
+]
+
+function printAnimals(i) {
+    this.print = function () {
+        console.log("#" + i + " " + this.species + ": " + this.name)
+    };
+    this.print();
+}
+printAnimals();
