@@ -20,7 +20,7 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setSubmittedData(formData);
     setFormData({ name: '', email: '' });
   }
 
