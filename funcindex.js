@@ -1025,3 +1025,51 @@ function printAnimals(i) {
     this.print();
 }
 printAnimals();
+
+console.log("---------------====================**********************===========-------")
+
+/// interview question with brah
+
+const students = [
+    { name: 'Alice', score: 85 },
+    { name: 'Bob', score: 92 },
+    { name: 'Charlie', score: 88 },
+    { name: 'Dave', score: 79 }
+];
+
+for (let i = 0; i < students.length; i++) {
+    if (students[i].score > 80) {
+        console.log(students[i])
+    }
+}
+
+// interview 2nd question
+
+const num = 123;
+const stringNum = String(num).split('').map(Number);
+
+for (let i = 0; i < stringNum.length; i++) {
+    for (let j = 0; j < stringNum.length; j++) {
+        if (stringNum[j] < stringNum[j + 1]) {
+            let temp = stringNum[j];
+            stringNum[j] = stringNum[j + 1]
+            stringNum[j + 1] = temp
+        }
+    }
+}
+
+console.log(stringNum);
+
+const num2 = 456;
+const num2Str = String(num2);
+
+let reverseStr = '';
+
+for (let i = num2Str.length - 1; i >= 0; i--) {
+    reverseStr += num2Str[i]
+}
+
+console.log(Number(reverseStr));
+
+
+console.log(typeof (null))
