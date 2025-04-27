@@ -127,4 +127,66 @@ console.log("character Count:", countObj2);
 
 console.log("repeated characters:", repeatchar);
 
-console.log("----------------------************************************------------------------")
+console.log("----------------------************************************------------------------");
+
+
+const testStr3 = "zzzxxxyyywwwvvvuuutttrrqqqpppooonnmmlllkkkjjjiiihhhggg";
+
+const obj3 = {};
+const repeated = [];
+
+for (let char of testStr3) {
+    obj3[char] = (obj3[char] || 0) + 1;
+}
+
+console.log(obj3);
+
+for (let char in obj3) {
+    if (obj3[char] > 2) {
+        repeated.push(char)
+    }
+}
+
+console.log("repeated letters(more than thrice):", repeated)
+
+/// sort
+
+const numbers = ["banana", "apple", "cherry", "date"];
+const sortedNumbers = numbers.sort();
+const sortedNumbers2 = numbers.reverse();
+
+console.log(sortedNumbers2);
+
+//pallindrome
+
+const Pstr = "banana";
+
+const reversedPstr = Pstr.split("").reverse().join("");
+console.log("Given string:", Pstr);
+console.log("String reversed:", reversedPstr);
+
+if (reversedPstr == Pstr) {
+    console.log(`the given string :  ${Pstr} is a pallidrome`);
+} else {
+    console.log(`The given string : ${Pstr} is not a pallindrome`);
+}
+
+///
+
+const reverseStr = (str) => {
+    return str.split("").reverse().join("");
+}
+
+console.log(reverseStr("Hello"));
+
+// 
+
+const algoStr = "madam";
+
+const splitStr = algoStr.split('');
+console.log(splitStr);
+
+
+const reversealgoStr = [];
+
+for (i = 0; i < algoStr.length; i++)
