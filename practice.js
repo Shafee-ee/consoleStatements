@@ -179,14 +179,17 @@ const reverseStr = (str) => {
 
 console.log(reverseStr("Hello"));
 
+console.log(reverseStr("---------------------------**********************************************------------------------"));
+
 // 
 
-const algoStr = "madam";
+function reversedString(str) {
+    let arr = str.split('');
+    let reversedStr = [];
 
-const splitStr = algoStr.split('');
-console.log(splitStr);
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversedStr.push(arr[i])
+    }
 
-
-const reversealgoStr = [];
-
-for (i = 0; i < algoStr.length; i++)
+    return reverseStr;
+}
