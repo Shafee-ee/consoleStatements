@@ -193,3 +193,35 @@ function reversedString(str) {
 
     return reverseStr;
 }
+
+console.log(reversedString("madam1"));
+
+//
+function isPalindrome(str) {
+    const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const reversed = cleaned.split('').reverse().join('');
+    return cleaned === reversed;
+}
+
+console.log(isPalindrome("A man,a plan,a canal:panama"));
+
+console.log("--------------------***********************************************-------------------------")
+
+function isPalindromefunc(str) {
+    const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    let left = 0;
+    let right = cleaned.length - 1;
+
+    while (left < right) {
+        if (cleaned[left] !== cleaned[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true
+}
+
+const output = isPalindromefunc("Racecar");
+console.log(output)

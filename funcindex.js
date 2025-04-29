@@ -1070,6 +1070,4 @@ for (let i = num2Str.length - 1; i >= 0; i--) {
 }
 
 console.log(Number(reverseStr));
-
-
 console.log(typeof (null))

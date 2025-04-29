@@ -1,60 +1,36 @@
 import { useState } from 'react';
 
-
 function Form() {
-
-    const [formData, setFormData] = useState({
+    const [form, setForm] = useState({
         name: '',
-        email: ''
-    });
-
-    const [submittedData, setSubmittedData] = useState(null);
+        email: '',
+    })
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setFormData(prev => ({
+        setForm(prev => ({
             ...prev,
-            [name]: value
+            [name]: value,
         }))
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        setSubmittedData(formData);
-        setFormData({ name: '', email: '' });
-    }
-
     return (
-        <div>
+        <form className="card">
+            <input name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder='Enter your name'
 
-            <form onSubmit={handleSubmit}>
-                <input name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder='Enter your Name'
-                />
+            />
 
-                <input name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder='Enter your email'
-                />
+            <input name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder='Enter your email' />
+            <p>{form.name}-{form.email}</p>
 
-                <button type="submit">Submit</button>
-            </form>
-            {submittedData && (
-                <div>
-                    <h3>submitted Data</h3>
-                    <p>Name:{submittedData.name}</p>
-                    <p>Email:{submittedData.email}</p>
-                </div>
-            )
-
-            }
-
-        </div>
-    );
-
+        </form>
+    )
 }
 
 export default Form;

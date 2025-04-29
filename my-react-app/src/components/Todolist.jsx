@@ -20,7 +20,7 @@ function Todolist() {
     }
 
     return (
-        <div>
+        <div className='card'>
             <form onSubmit={handleAddTask}>
                 <input value={input}
                     onChange={(e) => setInput(e.target.value)}
