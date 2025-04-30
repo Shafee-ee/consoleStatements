@@ -1,46 +1,45 @@
 import { useState } from 'react';
 
-function Todolist() {
+function TodoList() {
+
+    const [task, setTask] = useState('');
     const [tasks, setTasks] = useState([]);
-    const [input, setInput] = useState('');
 
-    function handleAddTask(e) {
-        e.preventDefault();
-        if (!input.trim()) return;
 
-        const newTask = {
-            id: Date.now(),
-            text: input,
-            done: false
-        };
+    function handleChange(e) {
+        setTask(e.target.value)
+    }
 
-        setTasks(prev => [...prev, newTask]);
-        setInput('');
+    function handleAdd() {
+        if (task.trim() === "") {
+            alert('Enter a Task')
+        } else {
+            setTasks(prev => [...prev, task]);
+            setTask('');
+        }
+    }
 
+    function handleRemove(indexToRemove) {
+        setTasks(prev => prev.filter((_, index) => index !== indexToRemove))
     }
 
     return (
-        <div className='card'>
-            <form onSubmit={handleAddTask}>
-                <input value={input}
-                    onChange={(e) => setInput(e.target.value)}
-                    placeholder='Enter a Task'
-                />
+        <div className="card">
+            <input type="text"
+                value={task}
+                onChange={handleChange}
+                placeholder="Enter a Task" />
 
-                <button type="submit"> Add Task</button>
-            </form>
+            <button onClick={handleAdd}>Add task</button>
 
             <ul>
-                {
-                    tasks.map(task => (<li key={task.id}>{task.text}</li>))
-                }
-
-
+                {tasks.map((task, index) => (
+                    <li key={index}>{task}
+                        <button onClick={() => handleRemove(index)}>Remove Task</button></li>
+                ))}
             </ul>
         </div>
     )
-
-
 }
 
-export default Todolist;
+export default TodoList;

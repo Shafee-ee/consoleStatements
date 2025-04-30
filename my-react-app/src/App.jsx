@@ -3,7 +3,8 @@ import Todolist from './components/Todolist';
 import Greeting from './components/Greeting';
 import Card from './components/Card';
 import Welcome from './components/Welcome';
-import UseState from './components/UseState'
+import TimerComponent from './components/TimerComponent';
+
 
 import './App.css'
 
@@ -38,7 +39,7 @@ function App() {
 
       <Welcome name="shafee" age="atom" />
 
-      <UseState />
+      <UseEffect />
     </div >
   )
 }
