@@ -224,4 +224,73 @@ function isPalindromefunc(str) {
 }
 
 const output = isPalindromefunc("Racecar");
-console.log(output)
+console.log(output);
+
+// // setInterval
+// let count = 0;
+
+
+// const interval = setInterval(() => {
+
+//     count++;
+//     console.log('Count:', count);
+
+//     if (count === 5) {
+//         clearInterval(interval);
+//         console.log('stopped at 5')
+//     }
+// });
+
+
+// // digital clock
+
+// setInterval(() => {
+//     const now = new Date();
+//     const hours = String(now.getHours()).padStart(2, '0');
+//     const minutes = String(now.getMinutes()).padStart(2, '0');
+//     const seconds = String(now.getSeconds()).padStart(2, '0');
+
+//     console.clear();
+//     console.log(`🕛 current time:" ${hours}: ${minutes}: ${seconds}`);
+// }, 1000)
+
+// //Countdown
+
+// let seconds = 10;
+
+// const Rinterval = setInterval(() => {
+//     console.clear();
+
+
+//     if (seconds <= 0) {
+
+//         clearInterval(Rinterval);
+//         console.log("Time is UP!")
+//         return;
+//     }
+
+//     console.log("Time remaining:", seconds);
+//     seconds--;
+
+
+// }, 1000)
+
+// /// text based progress bar
+
+let total = 20;
+let remaining = total;
+
+const barInterval = setInterval(() => {
+    console.clear();
+    const completedBars = total - remaining;
+    const bar = '#'.repeat(completedBars) + '-'.repeat(remaining);
+
+    console.log(`[${bar}]${remaining}s remaining`);
+    remaining--;
+
+
+    if (remaining < 0) {
+        clearInterval(barInterval);
+        console.log("Progress completed");
+    }
+}, 500)
