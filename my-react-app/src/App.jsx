@@ -8,6 +8,7 @@ import WindowWidth from './components/WindowWidth';
 import Fetchthen from './components/Fetchthen';
 import Fetchasync from './components/Fetchasync';
 import DebouncedSearch from './components/DebouncedSearch';
+import DebouncedApi from './components/DebouncedApi';
 
 import './App.css'
 
@@ -46,6 +47,8 @@ function App() {
       <Fetchthen />
       <Fetchasync />
       <DebouncedSearch />
+      <DebouncedApi />
+
 
     </div >
   )
