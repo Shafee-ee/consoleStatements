@@ -9,6 +9,9 @@ import Fetchthen from './components/Fetchthen';
 import Fetchasync from './components/Fetchasync';
 import DebouncedSearch from './components/DebouncedSearch';
 import DebouncedApi from './components/DebouncedApi';
+import SearchMovies from './components/Searchmovie';
+import UseRef from './components/UseRef';
+import AutoFocus from './components/AutoFocus';
 
 import './App.css'
 
@@ -48,6 +51,9 @@ function App() {
       <Fetchasync />
       <DebouncedSearch />
       <DebouncedApi />
+      <SearchMovies />
+      <UseRef />
+      <AutoFocus />
 
 
     </div >

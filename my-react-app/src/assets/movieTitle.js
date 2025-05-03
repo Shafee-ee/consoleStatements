@@ -1,0 +1,21 @@
+export const movies = [
+    "The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction", "Forrest Gump",
+    "Inception", "Fight Club", "The Matrix", "The Lord of the Rings: The Fellowship of the Ring",
+    "The Lord of the Rings: The Two Towers", "The Lord of the Rings: The Return of the King",
+    "Interstellar", "Gladiator", "The Green Mile", "The Prestige", "Whiplash", "Se7en", "Saving Private Ryan",
+    "The Silence of the Lambs", "Django Unchained", "The Departed", "The Pianist", "Schindler's List",
+    "Parasite", "12 Angry Men", "The Usual Suspects", "Goodfellas", "Braveheart", "The Intouchables",
+    "The Lion King", "Back to the Future", "Avengers: Endgame", "Joker", "The Social Network",
+    "1917", "Toy Story", "The Truman Show", "Catch Me If You Can", "A Beautiful Mind",
+    "The Imitation Game", "Coco", "Inside Out", "La La Land", "Titanic", "Up", "Soul", "Spirited Away",
+    "The Incredibles", "Monsters, Inc.", "Ratatouille", "Finding Nemo", "WALL-E", "The Revenant",
+    "No Country for Old Men", "Prisoners", "Arrival", "Blade Runner 2049", "Her", "Looper", "The Grand Budapest Hotel",
+    "The Curious Case of Benjamin Button", "Birdman", "Ex Machina", "The Big Short", "Mad Max: Fury Road",
+    "Inglourious Basterds", "Once Upon a Time in Hollywood", "The Hateful Eight", "Gone Girl",
+    "Shutter Island", "The Wolf of Wall Street", "The Aviator", "Memento", "Tenet", "Oppenheimer",
+    "The Batman", "Guardians of the Galaxy", "Iron Man", "Doctor Strange", "Thor: Ragnarok",
+    "Black Panther", "Captain America: Civil War", "Spider-Man: No Way Home", "Logan", "Deadpool",
+    "X-Men: Days of Future Past", "The Hunger Games", "Divergent", "The Maze Runner", "Edge of Tomorrow",
+    "The Martian", "Gravity", "Avatar", "Dune", "District 9", "The Bourne Identity", "John Wick",
+    "Mission: Impossible – Fallout", "Skyfall", "Casino Royale", "Knives Out"
+];

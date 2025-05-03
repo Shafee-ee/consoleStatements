@@ -277,20 +277,58 @@ console.log(output);
 
 // /// text based progress bar
 
-let total = 20;
-let remaining = total;
+// let total = 20;
+// let remaining = total;
 
-const barInterval = setInterval(() => {
-    console.clear();
-    const completedBars = total - remaining;
-    const bar = '#'.repeat(completedBars) + '-'.repeat(remaining);
+// const barInterval = setInterval(() => {
+//     console.clear();
+//     const completedBars = total - remaining;
+//     const bar = '#'.repeat(completedBars) + '-'.repeat(remaining);
 
-    console.log(`[${bar}]${remaining}s remaining`);
-    remaining--;
+//     console.log(`[${bar}]${remaining}s remaining`);
+//     remaining--;
 
 
-    if (remaining < 0) {
-        clearInterval(barInterval);
-        console.log("Progress completed");
+//     if (remaining < 0) {
+//         clearInterval(barInterval);
+//         console.log("Progress completed");
+//     }
+// }, 500);
+
+
+// debouncing 
+
+
+console.log("---------------------------********************************---------------------")
+let timeoutId;
+
+function debounce(fn, delay) {
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay)
+    };
+}
+
+//simulate a search function
+function dsearch(query) {
+    console.log('Searching for:', query)
+}
+
+//wrap it in debounce
+const debouncedSearch = debounce(dsearch, 1000);
+
+const dinputs = ['h', 'he', 'hel', 'hell', 'hello'];
+
+let i = 0;
+const inputInterval = setInterval(() => {
+    if (i >= dinputs.length) {
+        clearInterval(inputInterval)
+        return;
     }
-}, 500)
+
+    console.log('User Typed:', dinputs[i]);
+    debouncedSearch(dinputs[i]);
+    i++;
+
+}, 300);
+
