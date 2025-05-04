@@ -9,16 +9,17 @@ import Fetchthen from './components/Fetchthen';
 import Fetchasync from './components/Fetchasync';
 import DebouncedSearch from './components/DebouncedSearch';
 import DebouncedApi from './components/DebouncedApi';
-import SearchMovies from './components/Searchmovie';
+import SearchMovies from './components/Searchmovie'; // do again 1 2 3 
 import UseRef from './components/UseRef';
 import AutoFocus from './components/AutoFocus';
 import StopWatchUseRef from './components/StopWatchUseRef';
 import ClickCounterUseRef from './components/ClickCountUseRef';
 import PreviousValue from './components/PreviousValue';
 import FocusInput from './components/FocusInput'
-import FormResetRef from './components/FormResetRef'
-import TrackInputFieldChange from './components/TrackInputFieldChange'
-import MeasureDiv from './components/MeasureDiv'
+import FormResetRef from './components/FormResetRef' //do again 
+import TrackInputFieldChange from './components/TrackInputFieldChange' // do again 
+import MeasureDiv from './components/MeasureDiv' // do again 
+import WindowWidthUseRef from './components/WindowWidthUseRef' // do again 
 
 import './App.css'
 
@@ -68,6 +69,7 @@ function App() {
       <FormResetRef />
       <TrackInputFieldChange />
       <MeasureDiv />
+      <WindowWidthUseRef />
 
     </div >
   )
