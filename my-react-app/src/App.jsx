@@ -12,6 +12,9 @@ import DebouncedApi from './components/DebouncedApi';
 import SearchMovies from './components/Searchmovie';
 import UseRef from './components/UseRef';
 import AutoFocus from './components/AutoFocus';
+import StopWatchUseRef from './components/StopWatchUseRef';
+import ClickCounterUseRef from './components/ClickCountUseRef';
+import PreviousValue from './components/PreviousValue';
 
 import './App.css'
 
@@ -54,6 +57,9 @@ function App() {
       <SearchMovies />
       <UseRef />
       <AutoFocus />
+      <StopWatchUseRef />
+      <ClickCounterUseRef />
+      <PreviousValue />
 
 
     </div >

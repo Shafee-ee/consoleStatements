@@ -1,39 +1,44 @@
 import { movies } from '../assets/movieTitle';
 import { useState, useEffect } from 'react';
 
-const Searchmovie = () => {
+const SearchMovies = () => {
     const [input, setInput] = useState('');
-    const [filteredMovies, setFilteredMovies] = useState([]);
+    const [filteredMovie, setFilteredMovies] = useState([]);
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => {
+
+        const timerId = setTimeout(() => {
             if (input == "") {
                 setFilteredMovies([]);
             } else {
-                filtered = movies.filter(movie =>
+                const filter = movies.filter((movie) => (
                     movie.toLowerCase().includes(input.toLowerCase())
-                );
-                setFilteredMovies(filtered);
+
+                ));
+                setFilteredMovies(filter);
+
             }
         }, 300);
 
-        return () => clearTimeout(timeoutId);
+        return () => clearTimeout(timerId);
     }, [input])
 
+
     return (
-        <div className='card'>
+        <div className="card">
             <input type="text"
-                placeholder='Enter a movie name...'
+                placeholder='Search for your movie...'
                 onChange={(e) => setInput(e.target.value)} />
+
             <ul>
-                {filteredMovies.map((movie, index) => (
+                {filteredMovie.map((movie, index) => (
                     <li key={index}>{movie}</li>
                 ))}
             </ul>
 
+
         </div>
     )
-
 }
 
-export default Searchmovie
+export default SearchMovies
