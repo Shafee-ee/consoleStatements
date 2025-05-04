@@ -15,6 +15,10 @@ import AutoFocus from './components/AutoFocus';
 import StopWatchUseRef from './components/StopWatchUseRef';
 import ClickCounterUseRef from './components/ClickCountUseRef';
 import PreviousValue from './components/PreviousValue';
+import FocusInput from './components/FocusInput'
+import FormResetRef from './components/FormResetRef'
+import TrackInputFieldChange from './components/TrackInputFieldChange'
+import MeasureDiv from './components/MeasureDiv'
 
 import './App.css'
 
@@ -60,7 +64,10 @@ function App() {
       <StopWatchUseRef />
       <ClickCounterUseRef />
       <PreviousValue />
-
+      <FocusInput />
+      <FormResetRef />
+      <TrackInputFieldChange />
+      <MeasureDiv />
 
     </div >
   )

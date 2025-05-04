@@ -15,7 +15,7 @@ const PreviousValue = () => {
             <input type="text"
                 onChange={(e) => setInput(e.target.value)} />
             <p>Current value:{input}</p>
-            <p>Previous value:{previousValueref.current}</p>
+            <p>Previous value:{previousValueref.current.toLowerCase()}</p>
         </div>
     )
 }
