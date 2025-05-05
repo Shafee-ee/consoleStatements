@@ -300,35 +300,43 @@ console.log(output);
 
 
 console.log("---------------------------********************************---------------------")
-let timeoutId;
+// let timeoutId;
 
-function debounce(fn, delay) {
-    return (...args) => {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => fn(...args), delay)
-    };
-}
+// function debounce(fn, delay) {
+//     return (...args) => {
+//         clearTimeout(timeoutId);
+//         timeoutId = setTimeout(() => fn(...args), delay)
+//     };
+// }
 
-//simulate a search function
-function dsearch(query) {
-    console.log('Searching for:', query)
-}
+// //simulate a search function
+// function dsearch(query) {
+//     console.log('Searching for:', query)
+// }
 
-//wrap it in debounce
-const debouncedSearch = debounce(dsearch, 1000);
+// //wrap it in debounce
+// const debouncedSearch = debounce(dsearch, 1000);
 
-const dinputs = ['h', 'he', 'hel', 'hell', 'hello'];
+// const dinputs = ['h', 'he', 'hel', 'hell', 'hello'];
 
-let i = 0;
-const inputInterval = setInterval(() => {
-    if (i >= dinputs.length) {
-        clearInterval(inputInterval)
-        return;
-    }
+// let i = 0;
+// const inputInterval = setInterval(() => {
+//     if (i >= dinputs.length) {
+//         clearInterval(inputInterval)
+//         return;
+//     }
 
-    console.log('User Typed:', dinputs[i]);
-    debouncedSearch(dinputs[i]);
-    i++;
+//     console.log('User Typed:', dinputs[i]);
+//     debouncedSearch(dinputs[i]);
+//     i++;
 
-}, 300);
+// }, 300);
 
+
+console.log("----------------------******************************---------------")
+const object = { a: 1, b: 2 };
+console.log(Object.entries(object))
+
+console.log("-------------****************************----------------")
+const user = { name: 'shafee', age: 32 };
+console.log(Object.entries(user))
