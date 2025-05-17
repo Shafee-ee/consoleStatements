@@ -340,3 +340,69 @@ console.log(Object.entries(object))
 console.log("-------------****************************----------------")
 const user = { name: 'shafee', age: 32 };
 console.log(Object.entries(user))
+console.log("-------------****************************----------------")
+
+const objUsers = {
+    name: "shafee",
+    age: 32,
+    isLoggedIn: true
+};
+
+console.log(Object.entries(objUsers))
+console.log("-------------****************************----------------")
+
+
+const User2 = {
+    name: 'shafee',
+    age: 32,
+    profession: "Developer"
+};
+
+const entries = Object.entries(User2);
+
+entries.forEach(([key, value]) => {
+    console.log(`${key}:${value}`)
+})
+
+console.log("-------------********************--------")
+const usersNested = {
+    alice: { age: 25, city: "Delhi" },
+    bob: { age: 30, city: "Mumbai" },
+};
+
+Object.entries(usersNested).forEach(([username, info]) => {
+    console.log(`User:${username}`)
+
+    Object.entries(info).forEach(([key, value]) => {
+        console.log(`${key}:${value}`)
+    });
+});
+
+console.log("-----------------*********************------------")
+
+const studentMarks = {
+    John: { math: 90, science: 80 },
+    Jane: { math: 85, science: 95 },
+    Mark: { math: 70, science: 60 }
+};
+
+Object.entries(studentMarks).forEach(([username, marks]) => {
+    const scores = Object.values(marks);
+    const avg = scores.reduce((sum, score) => sum + score, 0) / scores.length;
+    console.log(`${username}:${avg}`)
+})
+
+Object.entries(studentMarks).forEach(([username, subject]) => {
+    let highestSubject = '';
+    let highestScore = -Infinity;
+
+    Object.entries(subject).forEach(([subject, score]) => {
+        if (score > highestScore) {
+            highestScore = score;
+            highestSubject = subject;
+        }
+    });
+    console.log(`${username}:${highestSubject}`)
+
+});
+
