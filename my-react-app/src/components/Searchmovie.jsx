@@ -1,5 +1,5 @@
 import { movies } from '../assets/movieTitle';
-import { useEffect, useState, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Searchmovie = () => {
     const [input, setInput] = useState('');
@@ -12,10 +12,10 @@ const Searchmovie = () => {
                 return;
             }
             const filter = movies.filter((movie) => (
-                movie.toLowerCase().includes((input.toLowerCase))
+                movie.toLowerCase().includes((input.toLowerCase()))
             ))
 
-            filteredMovies = setFilteredMovies(filter);
+            setFilteredMovies(filter);
 
         }, 300)
 

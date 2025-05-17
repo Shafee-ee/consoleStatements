@@ -20,8 +20,11 @@ import FormResetRef from './components/FormResetRef' //do again
 import TrackInputFieldChange from './components/TrackInputFieldChange' // do again 
 import MeasureDiv from './components/MeasureDiv' // do again 
 import WindowWidthUseRef from './components/WindowWidthUseRef' // do again 
-
 import UseEffectRevival from './components/UseEffectRevival';
+import RefExample from './components/RefExample';
+import PP from './components/RefScrfolling';
+import MeasureBox from './components/MeasureBox';
+import VideoPlayer from './components/VideoPlayer';
 import './App.css'
 
 function App() {
@@ -60,7 +63,11 @@ function App() {
       <Fetchasync />
       <DebouncedSearch />
       <DebouncedApi />
+
+      <hr />
       <SearchMovies />
+      <hr />
+
       <UseRef />
       <AutoFocus />
       <StopWatchUseRef />
@@ -72,7 +79,17 @@ function App() {
       <MeasureDiv />
       <WindowWidthUseRef />
       <UseEffectRevival />
+      <hr />
+      <RefExample />
 
+      <hr />
+      <PP />
+
+      <hr />
+      <MeasureBox />
+
+      <hr />
+      <VideoPlayer />
     </div >
   )
 }
