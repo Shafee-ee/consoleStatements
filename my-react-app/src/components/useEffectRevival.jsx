@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-function useEffectRevival() {
+function UseEffectRevival() {
     useEffect(() => {
         console.log("Component Mounted")
     }, [])
     return <h1>Hello</h1>
 }
 
-export default useEffectRevival
+export default UseEffectRevival

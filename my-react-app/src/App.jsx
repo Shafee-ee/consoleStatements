@@ -20,8 +20,8 @@ import FormResetRef from './components/FormResetRef' //do again
 import TrackInputFieldChange from './components/TrackInputFieldChange' // do again 
 import MeasureDiv from './components/MeasureDiv' // do again 
 import WindowWidthUseRef from './components/WindowWidthUseRef' // do again 
-import useEffectRevival
-  from './components/useEffectRevival';
+
+import UseEffectRevival from './components/UseEffectRevival';
 import './App.css'
 
 function App() {
@@ -71,7 +71,7 @@ function App() {
       <TrackInputFieldChange />
       <MeasureDiv />
       <WindowWidthUseRef />
-      <useEffectRevival />
+      <UseEffectRevival />
 
     </div >
   )
