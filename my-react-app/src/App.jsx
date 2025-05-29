@@ -25,6 +25,7 @@ import RefExample from './components/RefExample';
 import PP from './components/RefScrfolling';
 import MeasureBox from './components/MeasureBox';
 import VideoPlayer from './components/VideoPlayer';
+import ClickCounterUseRef2 from './components/ClickCounterUseRef2';
 import './App.css'
 
 function App() {
@@ -90,6 +91,9 @@ function App() {
 
       <hr />
       <VideoPlayer />
+
+      <hr />
+      <ClickCounterUseRef2 />
     </div >
   )
 }
