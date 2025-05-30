@@ -95,6 +95,14 @@ const cartTotal = cart.reduce((acc, items) => {
     return acc + price * quantity;
 
 
-}, 0)
+}, 0);
 
-console.log(cartTotal)
+// using map and reduce
+
+const itemTotals = cart.map(item => item.price * item.quantity);
+
+console.log(itemTotals);
+
+const total = itemTotals.reduce((acc, price) => acc + price, 0)
+
+console.log(total);
