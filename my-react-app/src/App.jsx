@@ -26,6 +26,8 @@ import PP from './components/RefScrfolling';
 import MeasureBox from './components/MeasureBox';
 import VideoPlayer from './components/VideoPlayer';
 import ClickCounterUseRef2 from './components/ClickCounterUseRef2';
+
+import ReduxCounter from './components/ReduxCounter'
 import './App.css'
 
 function App() {
@@ -94,7 +96,13 @@ function App() {
 
       <hr />
       <ClickCounterUseRef2 />
+
+      <hr />
+
+      <  ReduxCounter />
     </div >
+
+
   )
 }
 
