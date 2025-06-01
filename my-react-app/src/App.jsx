@@ -28,6 +28,9 @@ import VideoPlayer from './components/VideoPlayer';
 import ClickCounterUseRef2 from './components/ClickCounterUseRef2';
 
 import ReduxCounter from './components/ReduxCounter'
+
+import AuthDemo from './components/AuthDemo';
+
 import './App.css'
 
 function App() {
@@ -100,6 +103,8 @@ function App() {
       <hr />
 
       <  ReduxCounter />
+      <hr />
+      <AuthDemo />
     </div >
 
 
