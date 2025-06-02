@@ -109,3 +109,119 @@ function firstNumNotRepeat(arr) {
     }
 }
 console.log(firstNumNotRepeat(FirstNumberNotRepeat));
+
+
+//You're given an array containing n distinct numbers taken from the range 0 to n. That means one number from this range is missing from the array.
+//Write a function to find and return the missing number.\
+
+const Missingarr = [0, 3, 1, 2, 4]; // Range is 0 to 5 (6 numbers), but one is missing
+
+function findMissing(arr) {
+    const n = arr.length + 1;
+    const expectedSum = (n * (n - 1)) / 2;
+
+    const actualSum = arr.reduce((a, b) => a + b, 0);
+
+    return expectedSum - actualSum;
+}
+
+console.log(findMissing(Missingarr));
+
+
+
+console.log("********* findMissingXOR ********")
+/// XOR solution
+const MissXORarr = [3, 0, 1, 4, 2];
+
+function findMissingXOR(arr) {
+    let xor = 0;
+    const n = arr.length + 1;
+
+    for (let i = 0; i <= n - 1; i++) {
+        xor ^= i;
+    }
+
+    for (let num of arr) {
+        xor ^= num;
+    }
+
+    return xor;
+}
+
+console.log(findMissingXOR(MissXORarr));
+
+
+console.log("******************** My method **************")
+const findMissingAz = [1, 2, 3, 4, 5, 7, 8, 9, 10, 6, 11, 12];
+
+function findMissingSA(arr) {
+    const arrLength = arr.length + 1;
+    const newArr = [];
+
+    for (let i = 1; i <= arrLength; i++) {
+        newArr.push(i)
+    }
+
+    for (let num of newArr) {
+        if (!arr.includes(num)) return num;
+
+    }
+
+}
+
+const op = findMissingSA(findMissingAz);
+
+console.log(op)
+
+
+console.log("********************** first non repeating number*************** problem 6")
+
+const array6 = [4, 5, 1, 5, 1, 2, 0, 2, 0, 4];
+
+function nonRepeat6(arr) {
+    const freq = {};
+
+    for (let num of arr) {
+        freq[num] = (freq[num] || 0) + 1;
+    }
+
+    for (let num of arr) {
+        if (freq[num] === 1) {
+            return num;
+        }
+    }
+    return "All numbers repeat"
+}
+
+console.log(nonRepeat6(array6));
+
+console.log("********************** Find the First Recurring Number*************** problem 7")
+
+const arr7 = [2, 5, 1, 2, 3, 5, 1];
+
+function firstRecurring7(arr) {
+    const seen = new Set();
+
+    for (let num of arr) {
+        if (seen.has(num)) {
+            return num;
+        }
+
+        seen.add(num)
+    }
+
+    return "there are no recurring numbers"
+}
+
+console.log(firstRecurring7(arr7))
+
+
+console.log("********************** Find the Length of the Longest Substring Without Repeating Characters*************** problem 8")
+
+const string8 = "abcabcbb";
+
+function findTheLongestSS(str) {
+    const seen = new Set();
+
+    for (let char of str)
+}
