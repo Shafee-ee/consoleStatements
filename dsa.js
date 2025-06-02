@@ -223,5 +223,11 @@ const string8 = "abcabcbb";
 function findTheLongestSS(str) {
     const seen = new Set();
 
-    for (let char of str)
+    for (let char of str) {
+        seen.has(char);
+    }
+
+    return seen
 }
+
+console.log(findTheLongestSS(string8))
