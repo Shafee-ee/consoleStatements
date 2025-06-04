@@ -1,58 +1,56 @@
-const arr = [5, 2, 3, 5, 1, 2, 4];
+console.log("  Find the First Repeating number*************** problem 1")
+
+const arr = [6, 5, 6, 2, 3, 5, 1, 2, 4];
 function findDuplicates(arr) {
-    const numseen = new Set();
+    const numSeen = new Set();
 
     for (let currentNumber of arr) {
-        if (numseen.has(currentNumber)) {
+        if (numSeen.has(currentNumber)) {
             return currentNumber;
         }
-
-        numseen.add(currentNumber)
+        numSeen.add(currentNumber);
     }
-
     return "there are no duplicate numbers"
-
 }
 
 console.log(findDuplicates(arr))
+console.log("  Find the First Repeating number*************** problem 1b")
 
-console.log("************ FIND THE FIRST DUPLICATE NUMBER****** ")
+const dupeArry = [8, 2, 5, 1, 8, 2, 2, 2, 3, 4, 1, 2, 5]
 
-const dupeArry = [2, 5, 1, 2, 2, 2, 3, 4, 1, 2, 5]
-
-function findFirstDuplicateNumbers(arr) {
+function findDuplicates1b(arr) {
     const numberSeen = new Set();
 
     for (let currentNumber of arr) {
         if (numberSeen.has(currentNumber)) {
-            return currentNumber
+            return currentNumber;
         }
-        numberSeen.add(currentNumber);
+
+        numberSeen.add(currentNumber)
     }
-    return "no duplicates found"
+
+    return "no duplicate numbers"
 }
 
-console.log(findFirstDuplicateNumbers(dupeArry))
+console.log(findDuplicates1b(dupeArry))
 
-
-console.log("******************* FREQUENT NUMBERs ****************");
+console.log("  Frequent number*************** problem 2")
 
 const freqArr = [1, 3, 2, 1, 4, 1, 3, 3, 3];
 
-const freqMap = {};
+const freq = {};
 
-for (let currentNumber of freqArr) {
-    if (freqMap[currentNumber]) {
-        freqMap[currentNumber] += 1;
+for (let num of freqArr) {
+    if (freq[num]) {
+        freq[num] += 1
     } else {
-        freqMap[currentNumber] = 1
+        freq[num] = 1
     }
 
 }
+console.log(freq)
 
-console.log(freqMap);
-
-console.log("***** is pallindrom array *******")
+console.log(" is pallindrom array ******* problem number3")
 
 const pallindromeArr = [1, 2, 3, 2, 1];
 
