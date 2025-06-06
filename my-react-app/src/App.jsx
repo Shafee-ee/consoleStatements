@@ -62,10 +62,11 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+
           { path: "/about", element: <About /> },
           { path: "/contact", element: <Contact /> },
           { path: "/products", element: <Products /> },
-          { path: "/home", element: <Home /> },
+          { path: "/", element: <Home /> },
           { path: "/todoList", element: <Todolist /> },
           { path: "SearchMovies", element: <SearchMovies /> },
           { path: "StopWatchUseRef", element: <StopWatchUseRef /> }

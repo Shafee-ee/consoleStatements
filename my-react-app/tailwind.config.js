@@ -6,7 +6,10 @@ module.exports = {
     ],
     theme: {
         extend: {
-            animation: {
+
+            colors: {
+                shafeeRed: '#ff0033',
+            }, animation: {
                 blink: 'blink 1s step-start infinite',
             },
             keyframes: {
