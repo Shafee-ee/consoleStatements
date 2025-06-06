@@ -21,12 +21,13 @@ const StopWatchUseRef = () => {
     }
 
     return (
-        <div className='card'>
-            <h1>Counter:{count}</h1>
-            <button onClick={handleStart}>Start</button>
-            <button onClick={handleStop}>Stop</button>
-            <button onClick={handleClear}>Clear</button>
-
+        <div className='py-5 bg-gray-300 flex flex-col items-center justify-center mx-auto w-full'>
+            <h1 className='my-10 bg-gray-200 text-yellow-500 py-2 px-5 rounded'>Counter <span className='text-green-800'>:</span> <span>{count}</span></h1>
+            <div>
+                <button className='px-4 py-2 bg-green-800 text-white mx-2' onClick={handleStart}>Start</button>
+                <button className='px-4 py-2 bg-red-800 text-white mx-2' onClick={handleStop}>Stop</button>
+                <button className='px-4 py-2 bg-blue-800 text-white mx-2' onClick={handleClear}>Clear</button>
+            </div>
 
         </div>
     )

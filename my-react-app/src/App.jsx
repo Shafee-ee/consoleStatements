@@ -1,5 +1,5 @@
 // import Form from './components/Form';
-// import Todolist from './components/Todolist';
+import Todolist from './components/Todolist';
 // import Greeting from './components/Greeting';
 // import Card from './components/Card';
 // import Welcome from './components/Welcome';
@@ -9,10 +9,10 @@
 // import Fetchasync from './components/Fetchasync';
 // import DebouncedSearch from './components/DebouncedSearch';
 // import DebouncedApi from './components/DebouncedApi';
-// import SearchMovies from './components/Searchmovie'; // do again 1 2 3 
+import SearchMovies from './components/Searchmovie'; // do again 1 2 3 
 // import UseRef from './components/UseRef';
 // import AutoFocus from './components/AutoFocus';
-// import StopWatchUseRef from './components/StopWatchUseRef';
+import StopWatchUseRef from './components/StopWatchUseRef';
 // import ClickCounterUseRef from './components/ClickCountUseRef';
 // import PreviousValue from './components/PreviousValue';
 // import FocusInput from './components/FocusInput'
@@ -31,8 +31,19 @@
 
 // import AuthDemo from './components/AuthDemo';
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import { Routes, Route } from 'react-router-dom'
+
 import './App.css'
 import Navbar from './components/Navbar'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Products from './pages/Products'
+import Home from './pages/Home';
+
+
+import AppLayout from './layouts/AppLayout'
 
 function App() {
 
@@ -45,6 +56,24 @@ function App() {
   // function handleGreet() {
   //   alert("Greeting triggred from APP!")
   // }
+
+  const router = createBrowserRouter(
+    [
+      {
+        element: <AppLayout />,
+        children: [
+          { path: "/about", element: <About /> },
+          { path: "/contact", element: <Contact /> },
+          { path: "/products", element: <Products /> },
+          { path: "/home", element: <Home /> },
+          { path: "/todoList", element: <Todolist /> },
+          { path: "SearchMovies", element: <SearchMovies /> },
+          { path: "StopWatchUseRef", element: <StopWatchUseRef /> }
+        ],
+      },
+    ]
+  )
+
 
   return (
     <div>
@@ -106,7 +135,8 @@ function App() {
       <  ReduxCounter />
       <hr />
       <AuthDemo /> */}
-      <Navbar />
+
+      <RouterProvider router={router} />
     </div >
 
 
