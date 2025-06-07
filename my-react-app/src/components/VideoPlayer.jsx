@@ -13,17 +13,18 @@ const VideoPlayer = () => {
     }
 
     return (
-        <div>
+        <div className='mt-3 flex flex-col items-center justify-center'>
             <video
                 ref={videoRef}
                 src="https://www.w3schools.com/html/mov_bbb.mp4"
                 width="400"
                 type="video/mp4"
-                controls={false} />
+                controls={false}
+                className='border-2' />
 
-            <div>
-                <button onClick={handlePlay}>Play</button>
-                <button onClick={handlePause}>Pause</button>
+            <div className='mt-3 flex items-center justify-center'>
+                <button className="px-4 py-2 bg-yellow-500 mr-2 rounded" onClick={handlePlay}>▶️</button>
+                <button className=" px-4 py-2 bg-blue-300 rounded" onClick={handlePause}>⏸️</button>
             </div>
 
         </div>

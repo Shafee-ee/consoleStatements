@@ -1,8 +1,8 @@
 // import Form from './components/Form';
 import Todolist from './components/Todolist';
 // import Greeting from './components/Greeting';
-// import Card from './components/Card';
-// import Welcome from './components/Welcome';
+import Card from './components/Card';
+import Welcome from './components/Welcome';
 // import TimerComponent from './components/TimerComponent';
 // import WindowWidth from './components/WindowWidth';
 // import Fetchthen from './components/Fetchthen';
@@ -24,7 +24,7 @@ import StopWatchUseRef from './components/StopWatchUseRef';
 // import RefExample from './components/RefExample';
 // import PP from './components/RefScrfolling';
 // import MeasureBox from './components/MeasureBox';
-// import VideoPlayer from './components/VideoPlayer';
+import VideoPlayer from './components/VideoPlayer';
 // import ClickCounterUseRef2 from './components/ClickCounterUseRef2';
 
 // import ReduxCounter from './components/ReduxCounter'
@@ -69,7 +69,11 @@ function App() {
           { path: "/", element: <Home /> },
           { path: "/todoList", element: <Todolist /> },
           { path: "SearchMovies", element: <SearchMovies /> },
-          { path: "StopWatchUseRef", element: <StopWatchUseRef /> }
+          { path: "StopWatchUseRef", element: <StopWatchUseRef /> },
+          { path: "card", element: <Card /> },
+          { path: "VideoPlayer", element: <VideoPlayer /> },
+          { path: "Welcome", element: <Welcome /> }
+
         ],
       },
     ]
