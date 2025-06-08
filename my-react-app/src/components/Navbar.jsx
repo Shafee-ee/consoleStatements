@@ -21,6 +21,7 @@ const Navbar = () => {
             <button className='py-2 px-4 bg-red-200 rounded my-2 mx-2'><Link to="/Card">Card</Link></button>
             <button className='py-2 px-4 bg-blue-200 rounded my-2 mx-2'><Link to="/VideoPlayer">Video Player</Link></button>
             <button className='py-2 px-4 bg-blue-200 rounded my-2 mx-2'><Link to="/Welcome">Welcome</Link></button>
+            <button className='py-2 px-4 bg-blue-200 rounded my-2 mx-2'><Link to="/ClickCounterUseRef">Click Counter</Link></button>
 
         </div>
     )

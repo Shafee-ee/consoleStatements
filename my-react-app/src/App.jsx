@@ -13,7 +13,7 @@ import SearchMovies from './components/Searchmovie'; // do again 1 2 3
 // import UseRef from './components/UseRef';
 // import AutoFocus from './components/AutoFocus';
 import StopWatchUseRef from './components/StopWatchUseRef';
-// import ClickCounterUseRef from './components/ClickCountUseRef';
+import ClickCounterUseRef from './components/ClickCountUseRef';
 // import PreviousValue from './components/PreviousValue';
 // import FocusInput from './components/FocusInput'
 // import FormResetRef from './components/FormResetRef' //do again 
@@ -72,7 +72,8 @@ function App() {
           { path: "StopWatchUseRef", element: <StopWatchUseRef /> },
           { path: "card", element: <Card /> },
           { path: "VideoPlayer", element: <VideoPlayer /> },
-          { path: "Welcome", element: <Welcome /> }
+          { path: "Welcome", element: <Welcome /> },
+          { path: "ClickCounterUseRef", element: <ClickCounterUseRef /> }
 
         ],
       },

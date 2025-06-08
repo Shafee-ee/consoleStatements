@@ -28,12 +28,12 @@ const Searchmovie = () => {
             <input type="text"
                 placeholder='Search for a movie'
                 onChange={(e) => setInput(e.target.value)}
-            />
+                className='w-full bg-gray-100 p-2 text-black' />
 
-            <ul>
+            <ul className='text-gray-600 bg-blue-100 '>
                 {
                     filteredMovies.map((movie, index) => (
-                        <li key={index}>{movie}</li>
+                        <li key={index} className='border-b border-gray-100 px-2'><span className='pr-2 text-red-900 font-bold'>{index + 1}.</span>{movie}</li>
                     ))
                 }
             </ul>
