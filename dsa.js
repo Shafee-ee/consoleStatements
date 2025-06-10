@@ -174,58 +174,71 @@ console.log(op)
 
 console.log("********************** first non repeating number*************** problem 6")
 
-const array6 = [4, 5, 1, 5, 1, 2, 0, 2, 0, 4];
+const array6 = [4, 5, 1, 5, 8, 1, 9, 10, 2, 0, 2, 0, 4];
 
-function nonRepeat6(arr) {
+function nonRepeatingNum6(arr) {
     const freq = {};
+    const result = [];
 
-    for (let num of arr) {
-        freq[num] = (freq[num] || 0) + 1;
+    for (let currentNumber of arr) {
+        freq[currentNumber] = (freq[currentNumber] || 0) + 1;
     }
 
-    for (let num of arr) {
-        if (freq[num] === 1) {
-            return num;
+    for (let currentNumber of arr) {
+        if (freq[currentNumber] === 1) {
+            result.push(Number(currentNumber))
         }
+
     }
-    return "All numbers repeat"
+
+    return result.length ? result : "All numbers repeat"
+
 }
 
-console.log(nonRepeat6(array6));
-
+console.log(nonRepeatingNum6(array6))
 console.log("********************** Find the First Recurring Number*************** problem 7")
 
-const arr7 = [2, 5, 1, 2, 3, 5, 1];
+const arr7 = [2, 5, 1, 3, 5, 2];
 
-function firstRecurring7(arr) {
+function firstRecurringNumber8(arr) {
     const seen = new Set();
 
-    for (let num of arr) {
-        if (seen.has(num)) {
-            return num;
+    for (let currentNumber of arr) {
+        if (seen.has(currentNumber)) {
+            return currentNumber;
         }
 
-        seen.add(num)
+        seen.add(currentNumber);
     }
 
-    return "there are no recurring numbers"
+    return "There are no recurring number"
 }
 
-console.log(firstRecurring7(arr7))
+console.log(firstRecurringNumber8(arr7));
 
 
-console.log("********************** Find the Length of the Longest Substring Without Repeating Characters*************** problem 8")
+console.log("Find the Length of the Longest Substring Without Repeating Characters******** problem 8")
 
-const string8 = "abcabcbb";
+const string8 = "abdefabcbb";
 
-function findTheLongestSS(str) {
+const findTheLongestSS = (str) => {
+    let left = 0;
+    let maxLength = 0;
     const seen = new Set();
 
-    for (let char of str) {
-        seen.has(char);
+    for (let right = 0; right < str.length; right++) {
+        char = str[right];
+
+        while (seen.has(char)) {
+            seen.delete(str[left])
+            left++;
+        }
+
+        seen.add(char);
+        maxLength = Math.max(maxLength, right - left + 1)
     }
 
-    return seen
+    return maxLength
 }
 
 console.log(findTheLongestSS(string8))
