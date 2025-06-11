@@ -530,3 +530,8 @@ function areAnagramsSentence() {
     return sortedA === sortedB;
 
 }
+
+
+
+
+
