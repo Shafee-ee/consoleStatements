@@ -301,7 +301,10 @@ console.log(`\n Final Sorted array:`, sortedArr);
 
 console.log("Bubble Sort visualization******** ");
 
-const number10b = [4, 5, 6, 3, 2, 7, 9, 1, 8];
+
+const testArray = Array.from({ length: 100 }, () => Math.floor(Math.random() * 1000) + 1);
+
+
 
 function bubbleSort10b(arr) {
     let wasSwapped;
@@ -321,9 +324,209 @@ function bubbleSort10b(arr) {
 
         }
 
-    } while (wasSwapped)
+    } while (wasSwapped);
+
     return arr;
 
 }
 
-console.log(bubbleSort10b(number10b))
+console.log(bubbleSort10b(testArray))
+
+console.log("********** Insertion Sort ****** problem 11");
+
+function insertionSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let current = arr[i];
+        let j = i - 1;
+
+        while (j >= 0 && arr[j] > current) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = current;
+    }
+
+    return arr;
+}
+
+
+console.time("Insertion Sort Time");
+const sorted = insertionSort(testArray);
+console.timeEnd("Insertion Sort Time");
+console.log("Sorted Array:", sorted);
+
+console.log("** find the first non-repeating character****** problem 12");
+
+const string12 = "aabbccddeeffg";
+
+function findFirstNonRepeatLetter(str) {
+    const freq = {};
+
+    for (let currentLetter of str) {
+        freq[currentLetter] = (freq[currentLetter] || 0) + 1;
+        console.log(freq)
+
+    }
+
+    for (let currentLetter of str) {
+        if (freq[currentLetter] === 1) {
+            return currentLetter;
+        }
+    }
+
+    return "There are no Non repeating numbers"
+
+}
+
+console.log(findFirstNonRepeatLetter(string12));
+
+console.log("**** Group characters that appear more than once in a string ***** problem 13")
+
+const string13 = "programming";
+
+function GroupCharRepeats(str) {
+    const freq = {};
+    let OutputArray13 = []
+
+    for (let currentLetter of str) {
+        freq[currentLetter] = (freq[currentLetter] || 0) + 1;
+    }
+
+    for (let currentLetter of str) {
+        if (freq[currentLetter] > 1 && !OutputArray13.includes(currentLetter)) {
+            OutputArray13.push(currentLetter);
+        }
+    }
+    return OutputArray13.length > 0 ? OutputArray13 : "None of the letters repeat"
+}
+
+console.log(GroupCharRepeats(string13))
+
+console.log("**** find the missing number in a sequence... problem*******14");
+
+const array14 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14];
+
+function findMissingNum14(arr) {
+    const n = Math.max(...arr);//arr[arr.length-1]
+
+    expectedSum = (n * (n + 1)) / 2;
+
+    actualSum = arr.reduce((acc, current) => acc + current, 0);
+
+    return expectedSum - actualSum;
+}
+
+console.log(findMissingNum14(array14));
+
+
+console.log("**** problem 14 b")
+
+function findMissinNumber14b(arr) {
+    const arrayLength = arr.length + 1;
+    const newArray = [];
+
+    for (let i = 1; i <= arrayLength; i++) {
+        newArray.push(i);
+    }
+
+    for (let num of newArray) {
+        if (!arr.includes(num)) {
+            return num;
+        }
+    }
+
+}
+console.log(findMissinNumber14b(array14))
+
+console.log("** find the missing numbers in a sequence *** problem 15")
+
+const array15 = [1, 2, 4, 5, 7, 9, 12, 17, 171];
+
+function findAllMissingNumber(arr) {
+    const numberSeen = new Set(arr);
+    const missingNumbers = [];
+    const presentNumbers = [];
+
+    const max = Math.max(...arr);
+
+    const result = Array.from({ length: max }, (_, i) => i + 1).reduce(
+        (acc, num) => {
+            if (numberSeen.has(num)) {
+                acc.presentNumbers.push(num);
+            } else {
+                acc.missingNumbers.push(num)
+            }
+            return acc;
+        },
+        { presentNumbers: [], missingNumbers: [] }
+    );
+
+    return result;
+}
+console.log(findAllMissingNumber(array15))
+
+
+/// Array.from () exercises. 
+
+console.log("Exercise 1 Array from*******")
+const arrE1 = Array.from({ length: 10 }, (_, i) => i + 1).map(num => num * 2).reduce((acc, curr) => acc + curr, 0);
+console.log(arrE1);
+
+console.log("***AreAnaGrams**** problem 15");
+
+function areAnagrams(a, b) {
+
+    if (a.length !== b.length) return false;
+    const freqA = {};
+    const freqB = {};
+
+    for (let char of a) {
+        freqA[char] = (freqA[char] || 0) + 1;
+    }
+
+    for (let char of b) {
+        freqB[char] = (freqB[char] || 0) + 1;
+    }
+
+    for (let key in freqA) {
+        if (freqA[key] !== freqB[key]) return false;
+    }
+
+    return true;
+
+}
+const aWord = "silent";
+const bWord = "listen";
+console.log(areAnagrams(aWord, bWord));
+
+console.log("**** Problem 15b");
+
+const areAnagramsb = (a, b) => {
+    a.length === b.length && a.split('').sort('').join('') === b.split('').join('');
+}
+
+console.log(areAnagrams(aWord, bWord));
+
+console.log("AreAnagram***sentences******** 15 b")
+
+
+
+console.log(areAnagrams("School master", "The classroom")); // true
+console.log(areAnagrams("Hello World", "dlroW olleH"));     // true
+console.log(areAnagrams("Test case", "Case test!"));
+function areAnagramsSentence() {
+
+    // step1: normalize both strings remove spaces, convert to LowerCase // fillet the fish
+    const cleanA = a.replace(/\s+/g, '').toLowerCase();
+    const cleanB = b.replace(/\s+/g, '').toLowerCase();
+
+    // step2: quick length check after cleaning // check how much meat you got lengthwises
+    if (cleanA.length !== cleanB.length) return false;
+
+    //step3: sort and compare 
+    const sortedA = cleanA.split('').sort().join('');
+    const sortedB = cleanB.split('').sort().join('');
+
+    return sortedA === sortedB;
+
+}
