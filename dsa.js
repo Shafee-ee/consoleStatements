@@ -514,7 +514,7 @@ console.log("AreAnagram***sentences******** 15 b")
 console.log(areAnagrams("School master", "The classroom")); // true
 console.log(areAnagrams("Hello World", "dlroW olleH"));     // true
 console.log(areAnagrams("Test case", "Case test!"));
-function areAnagramsSentence() {
+function areAnagramsSentence(a, b) {
 
     // step1: normalize both strings remove spaces, convert to LowerCase // fillet the fish
     const cleanA = a.replace(/\s+/g, '').toLowerCase();

@@ -41,6 +41,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Home from './pages/Home';
+import StickyNotes from './pages/StickyNotes';
 
 
 import AppLayout from './layouts/AppLayout'
@@ -67,6 +68,7 @@ function App() {
           { path: "/contact", element: <Contact /> },
           { path: "/products", element: <Products /> },
           { path: "/", element: <Home /> },
+          { path: "/StickyNotes", element: <StickyNotes /> },
           { path: "/todoList", element: <Todolist /> },
           { path: "SearchMovies", element: <SearchMovies /> },
           { path: "StopWatchUseRef", element: <StopWatchUseRef /> },
