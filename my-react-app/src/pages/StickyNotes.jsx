@@ -62,7 +62,7 @@ const StickyNotes = () => {
                         zIndex: draggingId == note.id ? 1000 : 1,
                     }}
 
-                >{note.note}</div >
+                >📌{note.note}</div >
             ))}
         </>
 

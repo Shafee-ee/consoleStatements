@@ -7,10 +7,13 @@ const Navbar = () => {
             <div className='bg-gray-400 shadow px-4 py-3 flex items-center justify-between'>
                 <img src="/me.png" alt="logo" className='w-14' />
                 <ul className='flex'>
-                    <li className="hover:text-yellow-300 px-4 cursor-pointer"><Link to="/home">Home</Link></li>
+                    <li className="hover:text-yellow-300 px-4 cursor-pointer"><Link to="/">Home</Link></li>
                     <li className="hover:text-yellow-300 px-4 cursor-pointer"><Link to="/About">About</Link>                </li>
                     <li className="hover:text-yellow-300 px-4 cursor-pointer"> <Link to="/Contact">Contact</Link>               </li>
-                    <li className="hover:text-yellow-300 px-4 cursor-pointer">  <Link to="/Products">Products</Link>              </li>
+                    <li className="hover:text-yellow-300 px-4 cursor-pointer">  <Link to="/Products">Products</Link>
+
+                    </li>
+                    <li className="hover:text-yellow-300 px-4 cursor-pointer">  <Link to="/StickyNotes">StickyNotes</Link>        </li>
                 </ul>
 
                 <button className='bg-black text-white px-4 py-2 rounded hover:bg-gray-800'>Get Started</button>
@@ -23,7 +26,7 @@ const Navbar = () => {
             <button className='py-2 px-4 bg-blue-200 rounded my-2 mx-2'><Link to="/Welcome">Welcome</Link></button>
             <button className='py-2 px-4 bg-blue-200 rounded my-2 mx-2'><Link to="/ClickCounterUseRef">Click Counter</Link></button>
 
-        </div>
+        </div >
     )
 }
 
