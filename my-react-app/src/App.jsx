@@ -42,9 +42,11 @@ import Contact from './pages/Contact'
 import Products from './pages/Products'
 import Home from './pages/Home';
 import StickyNotes from './pages/StickyNotes';
+import ToggleButton from './components/ToggleButton';
 
 
-import AppLayout from './layouts/AppLayout'
+import AppLayout from './layouts/AppLayout';
+import DarkMode from './components/DarkMode';
 
 function App() {
 
@@ -63,7 +65,8 @@ function App() {
       {
         element: <AppLayout />,
         children: [
-
+          { path: "/DarkMode", element: <DarkMode /> },
+          { path: "/ToggleButton", element: <ToggleButton /> },
           { path: "/about", element: <About /> },
           { path: "/contact", element: <Contact /> },
           { path: "/products", element: <Products /> },
