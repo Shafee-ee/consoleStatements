@@ -1,19 +1,27 @@
 console.log("  Find the First Repeating number*************** problem 1")
 
 const arr = [6, 5, 6, 2, 3, 5, 1, 2, 4];
-function findDuplicates(arr) {
-    const numSeen = new Set();
+function findTheFirstRepeatingNum(arr) {
+    const seen = new Set();
 
     for (let currentNumber of arr) {
-        if (numSeen.has(currentNumber)) {
+        if (seen.has(currentNumber)) {
             return currentNumber;
         }
-        numSeen.add(currentNumber);
+
+        seen.add(currentNumber);
     }
-    return "there are no duplicate numbers"
+
+    return "There  are no repeating numbers"
 }
 
-console.log(findDuplicates(arr))
+console.log(findTheFirstRepeatingNum(arr));
+
+
+//1st problem ends
+
+
+
 console.log("  Find the First Repeating number*************** problem 1b")
 
 const dupeArry = [8, 2, 5, 1, 8, 2, 2, 2, 3, 4, 1, 2, 5]
@@ -33,6 +41,10 @@ function findDuplicates1b(arr) {
 }
 
 console.log(findDuplicates1b(dupeArry))
+
+
+//2nd problem ends
+
 
 console.log("  Frequent number*************** problem 2")
 
