@@ -25,7 +25,7 @@ import ClickCounterUseRef from './components/ClickCountUseRef';
 // import PP from './components/RefScrfolling';
 // import MeasureBox from './components/MeasureBox';
 import VideoPlayer from './components/VideoPlayer';
-// import ClickCounterUseRef2 from './components/ClickCounterUseRef2';
+import ClickCounterUseRef2 from './components/ClickCounterUseRef2';
 
 // import ReduxCounter from './components/ReduxCounter'
 
@@ -43,7 +43,7 @@ import Products from './pages/Products'
 import Home from './pages/Home';
 import StickyNotes from './pages/StickyNotes';
 import ToggleButton from './components/ToggleButton';
-
+import ToggleSaveLocale from './components/ToggleSaveLocale';
 
 import AppLayout from './layouts/AppLayout';
 import DarkMode from './components/DarkMode';
@@ -65,7 +65,11 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+
+
+          { path: "/ClickCounterUseRef2", element: <ClickCounterUseRef2 /> },
           { path: "/DarkMode", element: <DarkMode /> },
+          { path: "ToggleSaveLocale", element: <ToggleSaveLocale /> },
           { path: "/ToggleButton", element: <ToggleButton /> },
           { path: "/about", element: <About /> },
           { path: "/contact", element: <Contact /> },

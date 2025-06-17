@@ -13,9 +13,9 @@ const ClickCounterUseRef2 = () => {
         alert(`Clicked ${countRef.current} times`)
     }
     return (
-        <div>
-            <button onClick={handleClick}> Click</button>
-            <button onClick={showCount}>Show Count</button>
+        <div className='flex flex-col items-center bg-blue-100 p-4 rounded-lg'>
+            <button onClick={handleClick} className='bg-red-100 px-4 py-3 border border-blue-600 mr-2 mb-2 rounded-lg'> Click</button>
+            <button onClick={showCount} className='bg-green-100 px-4 py-3  border border-blue-600  rounded-lg'>Show Count</button>
         </div>
     )
 
