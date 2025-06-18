@@ -47,6 +47,7 @@ import ToggleSaveLocale from './components/ToggleSaveLocale';
 
 import AppLayout from './layouts/AppLayout';
 import DarkMode from './components/DarkMode';
+import FetchDataFromFile from './components/FetchDataFromFile';
 
 function App() {
 
@@ -66,7 +67,7 @@ function App() {
         element: <AppLayout />,
         children: [
 
-
+          { path: "/FetchDataFromFile", element: <FetchDataFromFile /> },
           { path: "/ClickCounterUseRef2", element: <ClickCounterUseRef2 /> },
           { path: "/DarkMode", element: <DarkMode /> },
           { path: "ToggleSaveLocale", element: <ToggleSaveLocale /> },
