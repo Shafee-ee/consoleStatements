@@ -27,9 +27,15 @@ const FetchDataFromFile = () => {
     <div className='min-h-screen bg-gray-100 p-8'>
       <h1 className='text-3xl font-bold mb-6 text-center'>Our Team</h1>
 
-      {loading ? (<p className='grid gap-6 grid-cols  sm:grid'>Loading ...</p>) : (<div><img src="{member.avatar}" alt="member.name"
-        className='w-24 h-24 rounded-full mb-4 bg-blue-200' /></div>)}
-    </div>
+      {loading ? (<p className='grid gap-6 grid-cols  sm:grid'>Loading ...</p>) : (<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+        {team.map((member) => (
+          <div></div>
+        ))}
+
+
+      </div>)
+      }
+    </div >
   )
 }
 
