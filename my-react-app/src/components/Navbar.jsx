@@ -30,6 +30,8 @@ const Navbar = () => {
             <button className='py-2 px-4 bg-blue-800 rounded text-white my-2 mx-2'><Link to="/ClickCounterUseRef2">ClickCounterUseRef2</Link></button>
             <button className='py-2 px-4 bg-blue-800 rounded text-white my-2 mx-2'><Link to="/ToggleSaveLocale">ToggleSaveLocale</Link></button>
             <button className='py-2 px-4 bg-blue-800 rounded text-white my-2 mx-2'><Link to="/FetchDataFromFile">FetchDataFromFile</Link></button>
+            <button className='py-2 px-4 bg-yellow-800 rounded text-white my-2 mx-2'><Link to="/UseRef_ex1">UseRef_ex1</Link></button>
+            <button className='py-2 px-4 bg-green-500 rounded text-white my-2 mx-2'><Link to="/UseRef_focus">UseRef_focus</Link></button>
 
 
         </div >

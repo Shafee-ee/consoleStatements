@@ -29,7 +29,17 @@ const FetchDataFromFile = () => {
 
       {loading ? (<p className='grid gap-6 grid-cols  sm:grid'>Loading ...</p>) : (<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
         {team.map((member) => (
-          <div></div>
+          <div key={member.id} className='bg-white rounded-lg shadow-md p-6  flex flex-col items-center text-center'>
+            <img src={member.avatar} alt={member.name}
+              className='w-24 h-24 rounded-full mb-4 bg-blue-200 object-cover'
+            />
+
+            <h2 className='text-xl font-semibold'>{member.name}</h2>
+            <h2 className='text-gray-600'>{member.role}</h2>
+            <h2 className='text-yello-200'>{member.email}</h2>
+
+
+          </div>
         ))}
 
 

@@ -48,6 +48,8 @@ import ToggleSaveLocale from './components/ToggleSaveLocale';
 import AppLayout from './layouts/AppLayout';
 import DarkMode from './components/DarkMode';
 import FetchDataFromFile from './components/FetchDataFromFile';
+import UseRef_ex1 from './components/UseRef_ex1';
+import UseRef_focus from './components/UseRef_focus'
 
 function App() {
 
@@ -67,6 +69,8 @@ function App() {
         element: <AppLayout />,
         children: [
 
+          { path: "UseRef_focus", element: <UseRef_focus /> },
+          { path: "UseRef_ex1", element: <UseRef_ex1 /> },
           { path: "/FetchDataFromFile", element: <FetchDataFromFile /> },
           { path: "/ClickCounterUseRef2", element: <ClickCounterUseRef2 /> },
           { path: "/DarkMode", element: <DarkMode /> },
