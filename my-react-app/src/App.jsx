@@ -49,8 +49,10 @@ import AppLayout from './layouts/AppLayout';
 import DarkMode from './components/DarkMode';
 import FetchDataFromFile from './components/FetchDataFromFile';
 import UseRef_ex1 from './components/UseRef_ex1';
-import UseRef_focus from './components/UseRef_focus'
+import UseRef_focus from './components/UseRef_focus';
 
+import UseRef_PrevValue from './components/UseRef_PrevValue'
+import UseRef_Timer from './components/UseRef_Timer'
 function App() {
 
   // const user = {
@@ -68,7 +70,8 @@ function App() {
       {
         element: <AppLayout />,
         children: [
-
+          { path: "UseRef_Timer", element: <UseRef_Timer /> },
+          { path: "UseRef_PrevValue", element: <UseRef_PrevValue /> },
           { path: "UseRef_focus", element: <UseRef_focus /> },
           { path: "UseRef_ex1", element: <UseRef_ex1 /> },
           { path: "/FetchDataFromFile", element: <FetchDataFromFile /> },
