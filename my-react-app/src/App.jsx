@@ -44,6 +44,7 @@ import Home from './pages/Home';
 import StickyNotes from './pages/StickyNotes';
 import ToggleButton from './components/ToggleButton';
 import ToggleSaveLocale from './components/ToggleSaveLocale';
+import UseMemoFilter from './components/UseMemoFilter';
 
 import AppLayout from './layouts/AppLayout';
 import DarkMode from './components/DarkMode';
@@ -53,6 +54,7 @@ import UseRef_focus from './components/UseRef_focus';
 
 import UseRef_PrevValue from './components/UseRef_PrevValue'
 import UseRef_Timer from './components/UseRef_Timer'
+import AutoFocusParagraph from './components/AutoFocusParagraph'
 function App() {
 
   // const user = {
@@ -70,6 +72,8 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: "UseMemoFilter ", element: <UseMemoFilter /> },
+          { path: "AutoFocusParagraph", element: <AutoFocusParagraph /> },
           { path: "UseRef_Timer", element: <UseRef_Timer /> },
           { path: "UseRef_PrevValue", element: <UseRef_PrevValue /> },
           { path: "UseRef_focus", element: <UseRef_focus /> },
