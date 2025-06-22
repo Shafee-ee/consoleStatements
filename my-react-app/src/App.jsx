@@ -51,7 +51,7 @@ import DarkMode from './components/DarkMode';
 import FetchDataFromFile from './components/FetchDataFromFile';
 import UseRef_ex1 from './components/UseRef_ex1';
 import UseRef_focus from './components/UseRef_focus';
-
+import Pages from './components/Pages';
 import UseRef_PrevValue from './components/UseRef_PrevValue'
 import UseRef_Timer from './components/UseRef_Timer'
 import AutoFocusParagraph from './components/AutoFocusParagraph'
@@ -72,6 +72,7 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: 'Pages', element: <Pages /> },
           { path: "UseMemoFilter ", element: <UseMemoFilter /> },
           { path: "AutoFocusParagraph", element: <AutoFocusParagraph /> },
           { path: "UseRef_Timer", element: <UseRef_Timer /> },
