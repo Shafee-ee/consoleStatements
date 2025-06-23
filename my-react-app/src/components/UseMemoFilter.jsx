@@ -19,7 +19,7 @@ const UseMemoFilter = () => {
     }, [query])
 
     return (
-        <div>UseMemoFilter</div>
+        <div>Arkam </div>
     )
 }
 

@@ -54,7 +54,9 @@ import UseRef_focus from './components/UseRef_focus';
 import Pages from './components/Pages';
 import UseRef_PrevValue from './components/UseRef_PrevValue'
 import UseRef_Timer from './components/UseRef_Timer'
-import AutoFocusParagraph from './components/AutoFocusParagraph'
+import AutoFocusParagraph from './components/AutoFocusParagraph';
+import HowManyClicks from './components/HowManyClicks';
+import UpdateTitle from './components/UpdateTitle';
 function App() {
 
   // const user = {
@@ -72,7 +74,9 @@ function App() {
       {
         element: <AppLayout />,
         children: [
-          { path: 'Pages', element: <Pages /> },
+          { path: "UpdateTitle", element: <UpdateTitle /> },
+          { path: "HowManyClicks", element: <HowManyClicks /> },
+          { path: "Pages", element: <Pages /> },
           { path: "UseMemoFilter ", element: <UseMemoFilter /> },
           { path: "AutoFocusParagraph", element: <AutoFocusParagraph /> },
           { path: "UseRef_Timer", element: <UseRef_Timer /> },
