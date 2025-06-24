@@ -58,6 +58,7 @@ import AutoFocusParagraph from './components/AutoFocusParagraph';
 import HowManyClicks from './components/HowManyClicks';
 import UpdateTitle from './components/UpdateTitle';
 import TimerComponentInt from './components/TimerComponentInt';
+import NameList from './components/NameList';
 
 function App() {
 
@@ -76,6 +77,7 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: "NameList", element: <NameList /> },
           { path: "TimerComponentInt", element: <TimerComponentInt /> },
           { path: "UpdateTitle", element: <UpdateTitle /> },
           { path: "HowManyClicks", element: <HowManyClicks /> },
