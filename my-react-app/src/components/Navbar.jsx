@@ -41,6 +41,7 @@ const Navbar = () => {
             <button className='py-2 px-4 bg-yellow-500 rounded text-white my-2 mx-2'><Link to="/UpdateTitle">UpdateTitle </Link></button>
             <button className='py-2 px-4 bg-green-300 rounded text-white my-2 mx-2'><Link to="/TimerComponentInt">TimerComponentInt </Link></button>
             <button className='py-2 px-4 bg-green-300 rounded text-white my-2 mx-2'><Link to="/NameList">NameList </Link></button>
+            <button className='py-2 px-4 bg-red-600 rounded text-white my-2 mx-2'><Link to="/AutoFocusInt">AutoFocusInt </Link></button>
 
         </div >
     )
