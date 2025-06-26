@@ -60,6 +60,8 @@ import UpdateTitle from './components/UpdateTitle';
 import TimerComponentInt from './components/TimerComponentInt';
 import NameList from './components/NameList';
 import AutoFocusInt from './components/AutoFocusInt';
+import NameAppInt from './components/NameAppInt';
+import ExpensiveCalc from './components/ExpensiveCalc';
 
 function App() {
 
@@ -78,6 +80,8 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: "ExpensiveCalc", element: <ExpensiveCalc /> },
+          { path: "NameAppInt", element: <NameAppInt /> },
           { path: "AutoFocusInt", element: <AutoFocusInt /> },
           { path: "NameList", element: <NameList /> },
           { path: "TimerComponentInt", element: <TimerComponentInt /> },
