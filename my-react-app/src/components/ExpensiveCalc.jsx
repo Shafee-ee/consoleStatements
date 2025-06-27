@@ -22,6 +22,10 @@ const ExpensiveCalc = () => {
 
 
     const calc = expensiveCalc(number);//unoptimized?
+    const calc23 = expensiveCalc(number);//unoptimized?
+
+    const calc33 = expensiveCalc(number);//unoptimized?
+
 
     return (
         <div>
