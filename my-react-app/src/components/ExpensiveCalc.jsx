@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 const expensiveCalc = (num) => {
     console.log(`Running Expensive Calc....`);
@@ -22,19 +22,21 @@ const ExpensiveCalc = () => {
 
 
     const calc = expensiveCalc(number);//unoptimized?
-    const calc23 = expensiveCalc(number);//unoptimized?
 
-    const calc33 = expensiveCalc(number);//unoptimized?
+    // const calc = useMemo(() => expensiveCalc(number), [number]);
+
+
 
 
     return (
-        <div>
+        <div style={theme}>
             <input type="number"
                 value={number}
                 onChange={(e) => setNumber(parseInt(e.target.value))}
                 className='' />
 
             <button
+                className='bg-green-600 px-5 py-2 rounded mt-4'
                 onClick={() => setThemeDark(prev => !prev)}
             >
                 Toggle Theme

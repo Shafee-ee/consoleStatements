@@ -62,6 +62,7 @@ import NameList from './components/NameList';
 import AutoFocusInt from './components/AutoFocusInt';
 import NameAppInt from './components/NameAppInt';
 import ExpensiveCalc from './components/ExpensiveCalc';
+import ParentInt from './components/ParentInt';
 
 function App() {
 
@@ -80,6 +81,7 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: "ParentInt", element: <ParentInt /> },
           { path: "ExpensiveCalc", element: <ExpensiveCalc /> },
           { path: "NameAppInt", element: <NameAppInt /> },
           { path: "AutoFocusInt", element: <AutoFocusInt /> },
