@@ -6,7 +6,7 @@ const ParentInt = () => {
     const [dark, setDark] = useState(false);
 
     const theme = {
-        backgroundcolor: dark ? '#333' : "#fff",
+        backgroundColor: dark ? '#333' : "#fff",
         color: dark ? '#fff' : "#333",
         padding: '2rem',
         minHeight: '100vh'
