@@ -46,6 +46,8 @@ const Navbar = () => {
             <button className='py-2 px-4 bg-yellow-600 rounded text-white my-2 mx-2'><Link to="/ExpensiveCalc">ExpensiveCalcInt </Link></button>
             <button className='py-2 px-4 bg-yellow-600 rounded text-white my-2 mx-2'><Link to="/ParentInt">ParentInt </Link></button>
             <button className='py-2 px-4 bg-yellow-600 rounded text-white my-2 mx-2'><Link to="/TodoAppInt">TodoAppInt </Link></button>
+            <button className='py-2 px-4 bg-yellow-600 rounded text-white my-2 mx-2'><Link to="/PageLayout">PageLayout </Link></button>
+
 
         </div >
     )
