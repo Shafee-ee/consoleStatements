@@ -64,7 +64,8 @@ import NameAppInt from './components/NameAppInt';
 import ExpensiveCalc from './components/ExpensiveCalc';
 import ParentInt from './components/ParentInt';
 import TodoAppInt from './components/TodoAppInt';
-import PageLayout from './components/PageLayout'
+import PageLayout from './components/PageLayout';
+import ReactReduxInt from './components/ReactReduxInt';
 
 function App() {
 
@@ -83,6 +84,7 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: "ReactReduxInt", element: <ReactReduxInt /> },
           { path: "PageLayout", element: <PageLayout /> },
           { path: "TodoAppInt", element: <TodoAppInt /> },
           { path: "ParentInt", element: <ParentInt /> },
