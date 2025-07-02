@@ -9,6 +9,7 @@ const ReactReduxInt = () => {
     useEffect(() => {
         localStorage.setItem('names', JSON.stringify(names))
     }, [names]);
+
     const dispatch = useDispatch();
 
     const inputRef = useRef(null);

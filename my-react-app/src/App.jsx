@@ -66,6 +66,7 @@ import ParentInt from './components/ParentInt';
 import TodoAppInt from './components/TodoAppInt';
 import PageLayout from './components/PageLayout';
 import ReactReduxInt from './components/ReactReduxInt';
+import PropDrillDemo from './components/PropDrillDemo';
 
 function App() {
 
@@ -84,6 +85,7 @@ function App() {
       {
         element: <AppLayout />,
         children: [
+          { path: "PropDrillDemo", element: <PropDrillDemo /> },
           { path: "ReactReduxInt", element: <ReactReduxInt /> },
           { path: "PageLayout", element: <PageLayout /> },
           { path: "TodoAppInt", element: <TodoAppInt /> },

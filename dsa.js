@@ -1,18 +1,17 @@
 console.log("  Find the First Repeating number*************** problem 1")
 
 const arr = [6, 5, 6, 2, 3, 5, 1, 2, 4];
-function findTheFirstRepeatingNum(arr) {
+
+function findTheFirstRepeatingNum() {
     const seen = new Set();
 
     for (let currentNumber of arr) {
         if (seen.has(currentNumber)) {
-            return currentNumber;
+            return currentNumber
         }
-
         seen.add(currentNumber);
     }
-
-    return "There  are no repeating numbers"
+    return 'there are no repeating numbers'
 }
 
 console.log(findTheFirstRepeatingNum(arr));
@@ -25,21 +24,19 @@ console.log(findTheFirstRepeatingNum(arr));
 console.log("  Find the First Repeating number*************** problem 1b")
 
 const dupeArry = [8, 2, 5, 1, 8, 2, 2, 2, 3, 4, 1, 2, 5]
-
-function findDuplicates1b(arr) {
-    const numberSeen = new Set();
-
-    for (let currentNumber of arr) {
-        if (numberSeen.has(currentNumber)) {
+function findDuplicates1b() {
+    const seen = new Set();
+    for (let currentNumber of dupeArry) {
+        if (seen.has(currentNumber)) {
             return currentNumber;
         }
 
-        numberSeen.add(currentNumber)
+        seen.add(currentNumber);
     }
 
-    return "no duplicate numbers"
-}
+    return 'there are no repeating numbers';
 
+}
 console.log(findDuplicates1b(dupeArry))
 
 
@@ -52,15 +49,17 @@ const freqArr = [1, 3, 2, 1, 4, 1, 3, 3, 3];
 
 const freq = {};
 
-for (let num of freqArr) {
-    if (freq[num]) {
-        freq[num] += 1
+for (let currentNumber of freqArr) {
+    if (freq[currentNumber]) {
+        freq[currentNumber] += 1;
     } else {
-        freq[num] = 1
+        freq[currentNumber] = 1;
     }
-
 }
+
 console.log(freq)
+
+
 
 console.log(" is pallindrom array ******* problem number3")
 
@@ -543,7 +542,27 @@ function areAnagramsSentence(a, b) {
 
 }
 
+console.log(" is first non repeating character ******* problem number 16")
 
+const str15 = "aaabebcddb";
+
+const strObj = {};
+
+for (let currentLetter of str15) {
+    if (strObj[currentLetter]) {
+        strObj[currentLetter] += 1
+    } else {
+        strObj[currentLetter] = 1;
+    }
+}
+
+for (let currentLetter of str15) {
+    if (strObj[currentLetter] === 1) {
+        console.log("first non-repeating character:", currentLetter);
+        break;
+    }
+}
+console.log(strObj)
 
 
 
