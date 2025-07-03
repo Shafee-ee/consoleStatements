@@ -1,12 +1,20 @@
-import React from 'react';
-import Dashboard from './Dashboard'
+import React, { useContext } from 'react';
+import Dashboard from './Dashboard';
+import { UserContext } from '../UserContext';
 
 const PropDrillDemo = () => {
     const user = { name: "shafee", role: "admin" };
+    const logout = () => {
+        alert("Logging out....")
+    }
     return (
-        <div>
-            <h1>PropDrilling</h1>
-        </div>
+
+        <UserContext.Provider value={{ user, logout }}>
+            <div className='p-4'>
+                <h1 className='text-xl font-bold'>Prop Drilling Demo</h1>
+                <Dashboard />
+            </div>
+        </UserContext.Provider >
     )
 }
 

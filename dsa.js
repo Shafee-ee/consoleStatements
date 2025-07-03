@@ -4,14 +4,12 @@ const arr = [6, 5, 6, 2, 3, 5, 1, 2, 4];
 
 function findTheFirstRepeatingNum() {
     const seen = new Set();
-
     for (let currentNumber of arr) {
         if (seen.has(currentNumber)) {
             return currentNumber
         }
         seen.add(currentNumber);
     }
-    return 'there are no repeating numbers'
 }
 
 console.log(findTheFirstRepeatingNum(arr));
@@ -545,8 +543,7 @@ function areAnagramsSentence(a, b) {
 console.log(" is first non repeating character ******* problem number 16")
 
 const str15 = "aaabebcddb";
-
-const strObj = {};
+strObj = {};
 
 for (let currentLetter of str15) {
     if (strObj[currentLetter]) {
@@ -556,13 +553,25 @@ for (let currentLetter of str15) {
     }
 }
 
+
 for (let currentLetter of str15) {
     if (strObj[currentLetter] === 1) {
-        console.log("first non-repeating character:", currentLetter);
+        console.log("first Non repeating character:", currentLetter);
         break;
     }
 }
+
 console.log(strObj)
 
+console.log(" reverse a string ******* problem number 17")
 
 
+function reverseDaString(str) {
+    let reversedStr = '';
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversedStr += str[i]
+    }
+    return reversedStr;
+}
+
+console.log(reverseDaString("Hello"))
