@@ -575,3 +575,121 @@ function reverseDaString(str) {
 }
 
 console.log(reverseDaString("Hello"))
+
+
+console.log(" is first non repeating character ******* problem number 18");
+
+function firstNotRepeatchar(str) {
+    const freq = {};
+
+    for (let currentLetter of str) {
+        if (freq[currentLetter]) {
+            freq[currentLetter] += 1;
+        } else {
+            freq[currentLetter] = 1;
+        }
+
+    }
+
+    for (let currentLetter of str) {
+        if (freq[currentLetter] === 1) {
+            return currentLetter;
+        }
+    }
+
+}
+
+console.log(firstNotRepeatchar("aabbccddeefg"))
+
+console.log("Longest Substring Without Repeating Characters problem:19");
+
+const string19 = "abcabcbb";
+
+const Substring19 = (str) => {
+    let start = 0;
+    let end = 0;
+    let seen = new Set();
+    let maxLength = 0;
+
+    while (end < str.length) {
+        if (!seen.has(str[end])) {
+            seen.add(str[end]);
+            maxLength = Math.max(maxLength, end - start + 1);
+            end++;
+        } else {
+            seen.delete(str[start]);
+            start++;
+        }
+
+        return maxLength;
+    }
+
+
+}
+
+console.log(Substring19(string19));
+
+console.log("Container with most water problem 20");
+
+const height20 = [1, 8, 6, 2, 5, 4, 8, 3, 7];
+const maxArea20 = (arr) => {
+    let left = 0;
+    let right = arr.length - 1;
+    let max = 0;
+    let bestPair = [left, right];
+
+    while (left < right) {
+        const h = Math.min(arr[left], arr[right]);
+        const w = right - left;
+        const area = h * w;
+
+
+        if (area > max) {
+            max = area;
+            bestPair = [left, right];
+        }
+
+        if (arr[left] < arr[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+    return {
+        maxArea: max,
+        indexes: bestPair,
+        heights: [arr[bestPair[0]], arr[bestPair[1]]]
+    }
+}
+
+const result = maxArea20(height20);
+
+console.log(`max area:${result.maxArea}`)
+console.log(`indexes:${result.indexes}`)
+console.log(`heights:${result.heights}`)
+
+
+console.log("Merge Intervals problem 21");
+
+const intervals = [[15, 18], [1, 3], [2, 6], [8, 10]];
+
+const mergeIntervals = (arr) => {
+    intervals.sort((a, b) => a[0] - b[0]);
+    const merged = [arr[0]];
+
+    for (let i = 1; i < arr.length; i++) {
+        const [start, end] = arr[i];
+        const lastMerged = merged[merged.length - 1];
+
+        if (start <= lastMerged[1]) {
+            lastMerged[1] = Math.max(lastMerged[1], end);
+        } else {
+            merged.push([start, end]);
+        }
+
+    }
+
+    return merged;
+}
+
+console.log(mergeIntervals(intervals))
