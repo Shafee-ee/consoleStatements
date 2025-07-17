@@ -606,22 +606,22 @@ console.log("Longest Substring Without Repeating Characters problem:19");
 const string19 = "abcabcbb";
 
 const Substring19 = (str) => {
-    let start = 0;
-    let end = 0;
-    let seen = new Set();
-    let maxLength = 0;
+    let start = 0;// start point 
+    let end = 0;//end point
+    let seen = new Set();// create set
+    let maxLength = 0;//initialize maxlength
 
-    while (end < str.length) {
-        if (!seen.has(str[end])) {
-            seen.add(str[end]);
-            maxLength = Math.max(maxLength, end - start + 1);
-            end++;
+    while (end < str.length) {// condition if end=0 is less than the string length
+        if (!seen.has(str[end])) { // if seen does not have this character yet do this
+            seen.add(str[end]); // add it to the set
+            maxLength = Math.max(maxLength, end - start + 1);// update the length
+            end++; // increment the value of the end by 1 and return maxLength a
         } else {
-            seen.delete(str[start]);
-            start++;
+            seen.delete(str[start]); // if already there, remove the chatracter from the set
+            start++; // increment the start. 1st value in the set so that the length of the set remains the same
         }
 
-        return maxLength;
+        return maxLength; //return the maxlength
     }
 
 
@@ -693,3 +693,5 @@ const mergeIntervals = (arr) => {
 }
 
 console.log(mergeIntervals(intervals))
+
+console.log("Additional commit")
