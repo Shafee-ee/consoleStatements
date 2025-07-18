@@ -601,72 +601,78 @@ function firstNotRepeatchar(str) {
 
 console.log(firstNotRepeatchar("aabbccddeefg"))
 
-console.log("Longest Substring Without Repeating Characters problem:19");
+console.log("Longest Substring Without Repeating Characters problem:19 \n");
 
-const string19 = "abcabcbb";
-
+const string19 = "abcdefgabcbb";
 const Substring19 = (str) => {
-    let start = 0;// start point 
-    let end = 0;//end point
-    let seen = new Set();// create set
-    let maxLength = 0;//initialize maxlength
+    let start = 0;
+    let end = 0;
+    let seen = new Set();
+    let maxLength = 0;
 
-    while (end < str.length) {// condition if end=0 is less than the string length
-        if (!seen.has(str[end])) { // if seen does not have this character yet do this
-            seen.add(str[end]); // add it to the set
-            maxLength = Math.max(maxLength, end - start + 1);// update the length
-            end++; // increment the value of the end by 1 and return maxLength a
+    while (end < str.length) {
+        if (!seen.has(str[end])) {
+            seen.add(str[end]);
+            maxLength = Math.max(maxLength, end - start + 1);
+            end++;
         } else {
-            seen.delete(str[start]); // if already there, remove the chatracter from the set
-            start++; // increment the start. 1st value in the set so that the length of the set remains the same
+            seen.delete(str[start]);
+            start++;
         }
-
-        return maxLength; //return the maxlength
     }
+    return maxLength;
 
 
 }
 
-console.log(Substring19(string19));
 
-console.log("Container with most water problem 20");
+
+console.log(Substring19(string19))
+
+console.log("Container with most water problem 20 \n");
 
 const height20 = [1, 8, 6, 2, 5, 4, 8, 3, 7];
-const maxArea20 = (arr) => {
+
+const waterContainer = (arr) => {
     let left = 0;
     let right = arr.length - 1;
     let max = 0;
-    let bestPair = [left, right];
+    let bestPair = bestPair[left, right];
 
-    while (left < right) {
-        const h = Math.min(arr[left], arr[right]);
-        const w = right - left;
-        const area = h * w;
-
+    while (end < right) {
+        let height = Math.max(arr[left], arr[right]);
+        let width = left - right;
+        let area = height * width;
 
         if (area > max) {
             max = area;
             bestPair = [left, right];
         }
 
+
         if (arr[left] < arr[right]) {
             left++;
         } else {
             right--;
         }
+
     }
+
     return {
         maxArea: max,
         indexes: bestPair,
         heights: [arr[bestPair[0]], arr[bestPair[1]]]
     }
+
 }
 
-const result = maxArea20(height20);
 
-console.log(`max area:${result.maxArea}`)
-console.log(`indexes:${result.indexes}`)
-console.log(`heights:${result.heights}`)
+const result = waterContainer();
+
+console.log(`max area:${result.maxArea}`);
+console.log(`index:${result.indexes}`);
+console.log(`heights:${result.heights} \n`);
+
 
 
 console.log("Merge Intervals problem 21");
