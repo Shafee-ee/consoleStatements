@@ -637,25 +637,23 @@ const waterContainer = (arr) => {
     let left = 0;
     let right = arr.length - 1;
     let max = 0;
-    let bestPair = bestPair[left, right];
+    let bestPair = [left, right];
 
-    while (end < right) {
-        let height = Math.max(arr[left], arr[right]);
-        let width = left - right;
+    while (left < right) {
+        let height = Math.min(arr[left], arr[right]);
+        let width = right - left;
         let area = height * width;
 
         if (area > max) {
             max = area;
-            bestPair = [left, right];
+            bestPair = [left, right]
         }
-
 
         if (arr[left] < arr[right]) {
             left++;
         } else {
             right--;
         }
-
     }
 
     return {
@@ -666,13 +664,9 @@ const waterContainer = (arr) => {
 
 }
 
+const result = waterContainer(height20);
 
-const result = waterContainer();
-
-console.log(`max area:${result.maxArea}`);
-console.log(`index:${result.indexes}`);
-console.log(`heights:${result.heights} \n`);
-
+console.log(`Max Area:${result.maxArea} \n Indexes:${result.bestPair} \n heights:${result.heights}`)
 
 
 console.log("Merge Intervals problem 21");
@@ -680,24 +674,21 @@ console.log("Merge Intervals problem 21");
 const intervals = [[15, 18], [1, 3], [2, 6], [8, 10]];
 
 const mergeIntervals = (arr) => {
-    intervals.sort((a, b) => a[0] - b[0]);
+    arr.sort((a, b) => a[0] - b[0]);
     const merged = [arr[0]];
 
     for (let i = 1; i < arr.length; i++) {
-        const [start, end] = arr[i];
-        const lastMerged = merged[merged.length - 1];
+        const [start, end] = arr[i];//current ith value assigned to start and end 
+        const lastMerged = merged[merged.length - 1]//assign lastMerged to merged[merged.length-1(prev value in the 2d array)]
 
         if (start <= lastMerged[1]) {
             lastMerged[1] = Math.max(lastMerged[1], end);
         } else {
-            merged.push([start, end]);
+            merged.push([start, end])
         }
-
     }
 
     return merged;
 }
 
 console.log(mergeIntervals(intervals))
-
-console.log("Additional commit")
