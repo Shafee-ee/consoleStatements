@@ -677,9 +677,9 @@ const mergeIntervals = (arr) => {
     arr.sort((a, b) => a[0] - b[0]);
     const merged = [arr[0]];
 
-    for (let i = 1; i < arr.length; i++) {
-        const [start, end] = arr[i];//current ith value assigned to start and end 
-        const lastMerged = merged[merged.length - 1]//assign lastMerged to merged[merged.length-1(prev value in the 2d array)]
+    for (let i = 0; i < arr.length; i++) {
+        const [start, end] = arr[i];
+        const lastMerged = merged[merged.length - 1];
 
         if (start <= lastMerged[1]) {
             lastMerged[1] = Math.max(lastMerged[1], end);
@@ -687,10 +687,49 @@ const mergeIntervals = (arr) => {
             merged.push([start, end])
         }
     }
-
     return merged;
 }
 
-console.log(mergeIntervals(intervals))
+console.log(mergeIntervals(intervals));
 
-console.log("problem 22")
+
+console.log("find the smallest positive interger; problem 22 \n");
+const array22 = [-1, -2, -4, 1, 2, 3, 5, 6, 7, 8, 9, 11, 12];
+const findMissingNumber = (arr) => {
+    let i = 1;
+    while (true) {
+        if (!arr.includes(i)) {
+            return i;
+        }
+        i++;
+    }
+}
+
+console.log(findMissingNumber(array22))
+
+
+console.log("find the smallest positive interger; problem 22b \n");
+const array22a = [-1, -2, -4, 1, 2, 3, 5, 6, 7, 8, 9, 11, 12]
+const findMissingPositiveNumberb = (arr) => {
+    let n = arr.length;
+
+    for (let i = 0; i < n; i++) {
+        while (
+            arr[i] > 0 && arr[i] <= n && arr[arr[i] - 1] !== arr[i]
+        ) {
+            let correctIndex = arr[i] - 1;
+            [arr[i], arr[correctIndex]] = [arr[correctIndex], arr[i]]
+        }
+    }
+
+    for (let i = 0; i < n; i++) {
+        if (arr[i] !== i + 1) {
+            return i + 1;
+        }
+    }
+
+    return n + 1;
+
+}
+
+console.log(findMissingPositiveNumberb(array22a))
