@@ -692,3 +692,5 @@ const mergeIntervals = (arr) => {
 }
 
 console.log(mergeIntervals(intervals))
+
+console.log("problem 22")
