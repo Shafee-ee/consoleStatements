@@ -733,3 +733,40 @@ const findMissingPositiveNumberb = (arr) => {
 }
 
 console.log(findMissingPositiveNumberb(array22a))
+
+console.log("Product of array Except self; problem 23");
+
+const array23 = [3, 6]
+const productOfArrayExSelf = (arr) => {
+    let n = arr.length;
+    const result = new Array(n).fill(1);
+    let prefix = 1;
+
+    for (let i = 0; i < n; i++) {
+        result[i] *= prefix;
+        prefix *= arr[i];
+    }
+
+    let postfix = 1;
+    for (let i = n - 1; i >= 0; i--) {
+        result[i] *= postfix;
+        postfix *= arr[i];
+    }
+
+    return result;
+}
+
+console.log(productOfArrayExSelf(array23));
+
+console.log("Product of all other element. Problem 23a");
+
+const array23a = [3, 6, 8, 9];
+const productOfArrayExSelfa = (arr) => {
+    return arr.map((_, i) => {
+        return arr
+            .filter((_, j) => j !== i)
+            .reduce((acc, val) => acc * val, 1);
+    })
+}
+
+console.log(productOfArrayExSelfa(array23a))
