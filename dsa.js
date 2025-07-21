@@ -769,4 +769,8 @@ const productOfArrayExSelfa = (arr) => {
     })
 }
 
-console.log(productOfArrayExSelfa(array23a))
+console.log(productOfArrayExSelfa(array23a));
+
+console.log("Longest consecutive sequence in a set of array, problem 24");
+
+const array24 = [100, 4, 200, 1, 2, 3]; 
